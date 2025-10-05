@@ -145,7 +145,9 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--dark) 0%, #34495e 100%);
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(52, 73, 94, 0.8) 100%), url('https://i.stci.uk/dam/children-play-in-afghanistan-anonymised-version-ch1582011.jpg/p7bk516ivfw1cajym542fb5230e36uf0.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=gmSBp5ph');
+            background-size: cover;
+            background-position: center;
             color: white;
             padding: 100px 0 80px;
             text-align: center;
@@ -243,11 +245,26 @@
 
         .alert-card {
             background: white;
-            padding: 2.5rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-left: 5px solid var(--primary);
             transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .alert-card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .alert-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .alert-card-content {
+            padding: 2.5rem;
         }
 
         .alert-card:hover {
@@ -345,21 +362,31 @@
 
         .program-card {
             background: white;
-            padding: 2.5rem;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s;
             border-bottom: 4px solid var(--primary);
+            overflow: hidden;
         }
 
         .program-card:hover {
             transform: translateY(-10px);
         }
 
-        .program-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+        .program-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .program-content {
+            padding: 2.5rem;
         }
 
         .program-card h3 {
@@ -443,13 +470,14 @@
         }
 
         .member-image {
-            height: 250px;
-            background: var(--secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .member-info {
@@ -638,12 +666,13 @@
 
         .crisis-image {
             height: 200px;
-            background: var(--dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .crisis-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .crisis-content {
@@ -866,19 +895,34 @@
                 <h2 class="section-title">Urgent Crises</h2>
                 <div class="alerts-grid">
                     <div class="alert-card critical">
-                        <h3>🚨 FAMINE IN GAZA</h3>
-                        <p>Famine has now been officially confirmed in Gaza. Children are starving to death in plain sight. At least 132,000 children under five are at risk of death from acute malnutrition, as new data confirms famine in Gaza Governorate.</p>
-                        <a href="#" class="alert-link" data-page="emergency">Help Now →</a>
+                        <div class="alert-card-image">
+                            <img src="https://i.stci.uk/dam/abdi-17-months-is-measured-for-signs-of-malnutrition-with-a-muac-band-which-shows-yellow-ch1873527.jpg/07iyj1q434j1y44f053l6qgaldy73v63.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=47-iCnvn" alt="Child receiving emergency aid in Gaza">
+                        </div>
+                        <div class="alert-card-content">
+                            <h3>🚨 FAMINE IN GAZA</h3>
+                            <p>Famine has now been officially confirmed in Gaza. Children are starving to death in plain sight. At least 132,000 children under five are at risk of death from acute malnutrition, as new data confirms famine in Gaza Governorate.</p>
+                            <a href="#" class="alert-link" data-page="emergency">Help Now →</a>
+                        </div>
                     </div>
                     <div class="alert-card urgent">
-                        <h3>🌋 AFGHANISTAN EARTHQUAKE</h3>
-                        <p>A devastating 6.0 magnitude earthquake has struck Afghanistan. Hundreds have been killed and thousands of children have been impacted. Tremors are still occurring intermittently, putting more lives at risk.</p>
-                        <a href="#" class="alert-link" data-page="emergency">Take Action →</a>
+                        <div class="alert-card-image">
+                            <img src="https://i.stci.uk/dam/damage-due-to-an-earthquake-that-hit-kunar-province-afghanistan-on-1-september-2025-ch11434696.jpg/v722j38a63q514a858iv42isik4kc580.jpg?g=0.29x0.7&w=2562&format=webp&itok=hk4czRcF" alt="Earthquake damage in Afghanistan">
+                        </div>
+                        <div class="alert-card-content">
+                            <h3>🌋 AFGHANISTAN EARTHQUAKE</h3>
+                            <p>A devastating 6.0 magnitude earthquake has struck Afghanistan. Hundreds have been killed and thousands of children have been impacted. Tremors are still occurring intermittently, putting more lives at risk.</p>
+                            <a href="#" class="alert-link" data-page="emergency">Take Action →</a>
+                        </div>
                     </div>
                     <div class="alert-card warning">
-                        <h3>💰 FOREIGN AID CUTS</h3>
-                        <p>Funding cuts are putting our lifesaving work under threat. Governments globally are slashing foreign aid budgets that millions of children facing the toughest challenges depend on.</p>
-                        <a href="#" class="alert-link" data-page="about">Learn More →</a>
+                        <div class="alert-card-image">
+                            <img src="https://i.stci.uk/dam/abdi-17-months-is-measured-for-signs-of-malnutrition-with-a-muac-band-which-shows-yellow-ch1873527.jpg/07iyj1q434j1y44f053l6qgaldy73v63.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=47-iCnvn" alt="Children in need of support">
+                        </div>
+                        <div class="alert-card-content">
+                            <h3>💰 FOREIGN AID CUTS</h3>
+                            <p>Funding cuts are putting our lifesaving work under threat. Governments globally are slashing foreign aid budgets that millions of children facing the toughest challenges depend on.</p>
+                            <a href="#" class="alert-link" data-page="about">Learn More →</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -915,28 +959,44 @@
                 <h2 class="section-title">How We Empower Children</h2>
                 <div class="programs-grid">
                     <div class="program-card">
-                        <div class="program-icon">🏥</div>
-                        <h3>HEALTH & NUTRITION</h3>
-                        <p>Providing life-saving healthcare, nutrition support, and medical supplies to children in crisis zones and underserved communities.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <div class="program-image">
+                            <img src="https://i.stci.uk/dam/kamila-5-months-being-treated-for-malnutrition-held-by-her-mother-ch1873549.jpg/u46mj05qy6x0r042j7q7xg86518os148.jpg?g=0.5x0.33&w=1018&h=720&format=webp&itok=EPp1dCVt" alt="Child receiving medical checkup">
+                        </div>
+                        <div class="program-content">
+                            <h3>HEALTH & NUTRITION</h3>
+                            <p>Providing life-saving healthcare, nutrition support, and medical supplies to children in crisis zones and underserved communities.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
                     <div class="program-card">
-                        <div class="program-icon">🎓</div>
-                        <h3>EDUCATION</h3>
-                        <p>Ensuring every child has access to quality education, safe learning environments, and opportunities to thrive.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <div class="program-image">
+                            <img src="https://i.stci.uk/dam/sima-7-months-is-screened-for-malnutrition-by-a-nutrition-nurse-at-save-the-childrens-mobile-health-clinic-ch1871812.JPG/dn0upvl5m3b32tpe6kj708063x01bgcu.JPG?g=0.5x0.33&w=2562&format=webp&itok=QK4t9w-R" alt="Children studying in classroom">
+                        </div>
+                        <div class="program-content">
+                            <h3>EDUCATION</h3>
+                            <p>Ensuring every child has access to quality education, safe learning environments, and opportunities to thrive.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
                     <div class="program-card">
-                        <div class="program-icon">🛡️</div>
-                        <h3>PROTECTION</h3>
-                        <p>Safeguarding children from violence, exploitation, abuse, and harm through community-based protection systems.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <div class="program-image">
+                            <img src="https://i.stci.uk/dam/sima-7-months-is-screened-for-malnutrition-by-a-nutrition-nurse-at-save-the-childrens-mobile-health-clinic-ch1871812.JPG/dn0upvl5m3b32tpe6kj708063x01bgcu.JPG?g=0.5x0.33&w=2562&format=webp&itok=QK4t9w-R" alt="Child protection activities">
+                        </div>
+                        <div class="program-content">
+                            <h3>PROTECTION</h3>
+                            <p>Safeguarding children from violence, exploitation, abuse, and harm through community-based protection systems.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
                     <div class="program-card">
-                        <div class="program-icon">💪</div>
-                        <h3>RESILIENCE</h3>
-                        <p>Helping communities build resilience against disasters, climate change, and economic shocks.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <div class="program-image">
+                            <img src="https://i.stci.uk/dam/a-save-the-children-community-based-class-in-kabul-afghanistan-ch1668939.jpg/c63c753d1653o1c1401ly8csp66cb261.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=LOWnnUit" alt="Community resilience training">
+                        </div>
+                        <div class="program-content">
+                            <h3>RESILIENCE</h3>
+                            <p>Helping communities build resilience against disasters, climate change, and economic shocks.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -963,9 +1023,7 @@
                         <a href="#" class="btn btn-primary" data-page="donate">Support Our Mission</a>
                     </div>
                     <div class="mission-image">
-                        <div style="background: #3498db; height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
-                            Children in our education program
-                        </div>
+                        <img src="https://i.stci.uk/dam/a-save-the-children-community-based-class-in-kabul-afghanistan-ch1668939.jpg/c63c753d1653o1c1401ly8csp66cb261.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=LOWnnUit" alt="Children learning in classroom">
                     </div>
                 </div>
             </div>
@@ -976,7 +1034,9 @@
                 <h2 class="section-title">Our Leadership Team</h2>
                 <div class="team-grid">
                     <div class="team-member">
-                        <div class="member-image">👨‍💼</div>
+                        <div class="member-image">
+                            <img src="https://www.swfleye.com/wp-content/uploads/2024/12/SJ_new2_no-logo.webp" alt="Dr. Sarah Johnson, CEO">
+                        </div>
                         <div class="member-info">
                             <h3>Dr. Sarah Johnson</h3>
                             <div class="member-role">Chief Executive Officer</div>
@@ -984,7 +1044,9 @@
                         </div>
                     </div>
                     <div class="team-member">
-                        <div class="member-image">👩‍⚕️</div>
+                        <div class="member-image">
+                            <img src="https://doctors.rush.edu/Custom/Photos/Hires/988.jpg" alt="Dr. Michael Chen, Health Director">
+                        </div>
                         <div class="member-info">
                             <h3>Dr. Michael Chen</h3>
                             <div class="member-role">Director of Health Programs</div>
@@ -992,7 +1054,9 @@
                         </div>
                     </div>
                     <div class="team-member">
-                        <div class="member-image">👨‍🏫</div>
+                        <div class="member-image">
+                            <img src="https://thumbs.dreamstime.com/b/professional-black-businesswoman-professional-businesswoman-posing-portrait-session-119443615.jpg" alt="Amira Hassan, Head of Education">
+                        </div>
                         <div class="member-info">
                             <h3>Amira Hassan</h3>
                             <div class="member-role">Head of Education</div>
@@ -1090,7 +1154,9 @@
                 <h2 class="section-title">Active Crises</h2>
                 <div class="crisis-grid">
                     <div class="crisis-card">
-                        <div class="crisis-image" style="background: #e74c3c;">🍼</div>
+                        <div class="crisis-image">
+                            <img src="https://i.stci.uk/dam/abdi-17-months-is-measured-for-signs-of-malnutrition-with-a-muac-band-which-shows-yellow-ch1873527.jpg/07iyj1q434j1y44f053l6qgaldy73v63.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=47-iCnvn" alt="Emergency relief in Gaza">
+                        </div>
                         <div class="crisis-content">
                             <h3>Gaza Famine Crisis</h3>
                             <p>We're providing emergency nutrition, medical care, and protection services to children and families affected by the famine in Gaza.</p>
@@ -1111,7 +1177,9 @@
                     </div>
                     
                     <div class="crisis-card">
-                        <div class="crisis-image" style="background: #f39c12;">🏚️</div>
+                        <div class="crisis-image">
+                            <img src="https://i.stci.uk/dam/damage-due-to-an-earthquake-that-hit-kunar-province-afghanistan-on-1-september-2025-ch11434696.jpg/v722j38a63q514a858iv42isik4kc580.jpg?g=0.29x0.7&w=2562&format=webp&itok=hk4czRcF" alt="Earthquake relief efforts">
+                        </div>
                         <div class="crisis-content">
                             <h3>Afghanistan Earthquake</h3>
                             <p>Our emergency teams are on the ground providing shelter, medical aid, and essential supplies to families affected by the earthquake.</p>
@@ -1132,7 +1200,9 @@
                     </div>
                     
                     <div class="crisis-card">
-                        <div class="crisis-image" style="background: #3498db;">🌧️</div>
+                        <div class="crisis-image">
+                            <img src="https://i.stci.uk/dam/a-gathering-site-for-displaced-people-in-west-darfur-which-was-previously-a-school-has-been-destroyed-twice-ch1843042.jpg/1d7s1gkcg68pxcc26320r7830v40t723.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=eH3hcOj0" alt="Medical care impact">
+                        </div>
                         <div class="crisis-content">
                             <h3>Bangladesh Floods</h3>
                             <p>Severe flooding has displaced millions. We're providing clean water, sanitation, and emergency shelter to affected communities.</p>
