@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HopeForChildren | Protecting Children Worldwide</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --secondary: #3498db;
+            --secondary-dark: #2980b9;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --text: #333;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+            padding-top: 80px; /* Account for fixed navbar */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .donate-btn {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .donate-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #34495e 100%);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+            margin-top: -80px;
+            padding-top: 180px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            display: inline-block;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        /* Alerts Section */
+        .alerts-section {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+        }
+
+        .alerts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .alert-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .alert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .alert-card.critical {
+            border-left-color: #e74c3c;
+        }
+
+        .alert-card.urgent {
+            border-left-color: #f39c12;
+        }
+
+        .alert-card.warning {
+            border-left-color: #f1c40f;
+        }
+
+        .alert-card h3 {
+            margin-bottom: 1.2rem;
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+
+        .alert-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .alert-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
+
+        .alert-link:hover {
+            gap: 10px;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat .number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat .label {
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Programs Section */
+        .programs-section {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .program-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .program-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-card h3 {
+            margin-bottom: 1.2rem;
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+
+        .program-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        /* About Page Styles */
+        .about-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .mission-section {
+            padding: 5rem 0;
+        }
+
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mission-text h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+
+        .mission-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .team-section {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-image {
+            height: 250px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .member-info {
+            padding: 2rem;
+        }
+
+        .member-info h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Donate Page Styles */
+        .donate-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .donation-section {
+            padding: 5rem 0;
+        }
+
+        .donation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .donation-options {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .donation-type {
+            display: flex;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #e0e0e0;
+        }
+
+        .donation-option {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .donation-option.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .amount-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .amount-option {
+            padding: 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .amount-option:hover {
+            border-color: var(--primary);
+        }
+
+        .amount-option.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+        }
+
+        .custom-amount {
+            margin-bottom: 2rem;
+        }
+
+        .custom-amount label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .custom-amount input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: border-color 0.3s;
+        }
+
+        .custom-amount input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .donation-impact {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2.5rem;
+        }
+
+        .impact-title {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .impact-list {
+            list-style: none;
+        }
+
+        .impact-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .impact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .impact-icon {
+            color: var(--success);
+            font-size: 1.5rem;
+        }
+
+        /* Emergency Page Styles */
+        .emergency-hero {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .crisis-section {
+            padding: 5rem 0;
+        }
+
+        .crisis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .crisis-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .crisis-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .crisis-image {
+            height: 200px;
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .crisis-content {
+            padding: 2rem;
+        }
+
+        .crisis-content h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .crisis-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .crisis-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 10px;
+        }
+
+        .crisis-stat {
+            text-align: center;
+        }
+
+        .crisis-stat .number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .crisis-stat .label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #34495e;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .mission-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .donation-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                transition: left 0.3s;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .alerts-grid, .programs-grid, .crisis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">👶</span>
+                <h2>HopeForChildren</h2>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#" class="nav-link" data-page="emergency">Emergencies</a></li>
+                <li><a href="#" class="nav-link donate-btn" data-page="donate">Donate Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Every Child Deserves a Future</h1>
+                    <p>We're on the frontlines protecting children in the world's most dangerous places, providing healthcare, education, and protection to those who need it most.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary" data-page="emergency">Emergency Response</a>
+                        <a href="#" class="btn btn-secondary" data-page="donate">Donate Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Alerts -->
+        <section class="alerts-section">
+            <div class="container">
+                <h2 class="section-title">Urgent Crises</h2>
+                <div class="alerts-grid">
+                    <div class="alert-card critical">
+                        <h3>🚨 FAMINE IN GAZA</h3>
+                        <p>Famine has now been officially confirmed in Gaza. Children are starving to death in plain sight. At least 132,000 children under five are at risk of death from acute malnutrition, as new data confirms famine in Gaza Governorate.</p>
+                        <a href="#" class="alert-link" data-page="emergency">Help Now →</a>
+                    </div>
+                    <div class="alert-card urgent">
+                        <h3>🌋 AFGHANISTAN EARTHQUAKE</h3>
+                        <p>A devastating 6.0 magnitude earthquake has struck Afghanistan. Hundreds have been killed and thousands of children have been impacted. Tremors are still occurring intermittently, putting more lives at risk.</p>
+                        <a href="#" class="alert-link" data-page="emergency">Take Action →</a>
+                    </div>
+                    <div class="alert-card warning">
+                        <h3>💰 FOREIGN AID CUTS</h3>
+                        <p>Funding cuts are putting our lifesaving work under threat. Governments globally are slashing foreign aid budgets that millions of children facing the toughest challenges depend on.</p>
+                        <a href="#" class="alert-link" data-page="about">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Stats -->
+        <section class="impact-section">
+            <div class="container">
+                <h2 class="section-title">Our Impact in 2023</h2>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="number" data-count="2100000">2,100,000</div>
+                        <div class="label">Children Reached</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number" data-count="87">87</div>
+                        <div class="label">Countries</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number" data-count="85">85%</div>
+                        <div class="label">Program Spending</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number" data-count="100">100+</div>
+                        <div class="label">Years of Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section class="programs-section">
+            <div class="container">
+                <h2 class="section-title">How We Empower Children</h2>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">🏥</div>
+                        <h3>HEALTH & NUTRITION</h3>
+                        <p>Providing life-saving healthcare, nutrition support, and medical supplies to children in crisis zones and underserved communities.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon">🎓</div>
+                        <h3>EDUCATION</h3>
+                        <p>Ensuring every child has access to quality education, safe learning environments, and opportunities to thrive.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon">🛡️</div>
+                        <h3>PROTECTION</h3>
+                        <p>Safeguarding children from violence, exploitation, abuse, and harm through community-based protection systems.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon">💪</div>
+                        <h3>RESILIENCE</h3>
+                        <p>Helping communities build resilience against disasters, climate change, and economic shocks.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section class="about-hero">
+            <div class="container">
+                <h1>About HopeForChildren</h1>
+                <p>For over 100 years, we've been fighting for children's rights, saving their lives, and helping them fulfill their potential.</p>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h2>Our Mission & Vision</h2>
+                        <p>HopeForChildren is a global organization dedicated to improving the lives of children through healthcare, education, and protection programs. We believe every child deserves a healthy start, the opportunity to learn, and protection from harm.</p>
+                        <p>Founded in 1919, we've grown to become a leading children's charity working in over 80 countries. Our vision is a world in which every child attains the right to survival, protection, development and participation.</p>
+                        <p>We work tirelessly to ensure children's voices are heard, their rights are realized, and their needs are met - especially during times of crisis.</p>
+                        <a href="#" class="btn btn-primary" data-page="donate">Support Our Mission</a>
+                    </div>
+                    <div class="mission-image">
+                        <div style="background: #3498db; height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                            Children in our education program
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Our Leadership Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">👨‍💼</div>
+                        <div class="member-info">
+                            <h3>Dr. Sarah Johnson</h3>
+                            <div class="member-role">Chief Executive Officer</div>
+                            <p class="member-bio">With over 20 years of experience in international development, Sarah leads our global operations with passion and dedication.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">👩‍⚕️</div>
+                        <div class="member-info">
+                            <h3>Dr. Michael Chen</h3>
+                            <div class="member-role">Director of Health Programs</div>
+                            <p class="member-bio">Michael oversees our health and nutrition initiatives across 40 countries, ensuring children receive life-saving care.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">👨‍🏫</div>
+                        <div class="member-info">
+                            <h3>Amira Hassan</h3>
+                            <div class="member-role">Head of Education</div>
+                            <p class="member-bio">Amira leads our education programs, creating opportunities for children to learn and thrive even in crisis situations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Donate Page -->
+    <div id="donate" class="page">
+        <section class="donate-hero">
+            <div class="container">
+                <h1>Donate to Save Children's Lives</h1>
+                <p>Your donation can provide urgent aid, healthcare, and protection to children in crisis around the world.</p>
+            </div>
+        </section>
+
+        <section class="donation-section">
+            <div class="container">
+                <div class="donation-container">
+                    <div class="donation-options">
+                        <h2 class="section-title">Make a Donation</h2>
+                        
+                        <div class="donation-type">
+                            <div class="donation-option active" data-type="one-time">One-Time</div>
+                            <div class="donation-option" data-type="monthly">Monthly</div>
+                        </div>
+                        
+                        <div class="amount-options">
+                            <div class="amount-option" data-amount="25">$25</div>
+                            <div class="amount-option" data-amount="50">$50</div>
+                            <div class="amount-option active" data-amount="100">$100</div>
+                            <div class="amount-option" data-amount="250">$250</div>
+                        </div>
+                        
+                        <div class="custom-amount">
+                            <label for="custom-amount">Or enter your own amount:</label>
+                            <input type="number" id="custom-amount" placeholder="$">
+                        </div>
+                        
+                        <button class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.2rem;">Donate Now</button>
+                        
+                        <div style="text-align: center; margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                            Secure payment · Tax deductible · 100% satisfaction
+                        </div>
+                    </div>
+                    
+                    <div class="donation-impact">
+                        <h3 class="impact-title">Your Impact</h3>
+                        <p style="margin-bottom: 1.5rem; color: #666;">Here's how your donation could help:</p>
+                        
+                        <ul class="impact-list">
+                            <li>
+                                <span class="impact-icon">✓</span>
+                                <span>$25 could provide a child with essential school supplies for one year</span>
+                            </li>
+                            <li>
+                                <span class="impact-icon">✓</span>
+                                <span>$50 could provide a family with emergency food supplies for one month</span>
+                            </li>
+                            <li>
+                                <span class="impact-icon">✓</span>
+                                <span>$100 could provide life-saving medical treatment for two children</span>
+                            </li>
+                            <li>
+                                <span class="impact-icon">✓</span>
+                                <span>$250 could establish a safe learning space for 30 children</span>
+                            </li>
+                        </ul>
+                        
+                        <div style="background: #e8f5e9; padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
+                            <h4 style="color: var(--success); margin-bottom: 0.5rem;">Transparency Promise</h4>
+                            <p style="color: #666; margin: 0;">85% of your donation goes directly to programs that help children. We're rated 4-stars by Charity Navigator.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Emergency Page -->
+    <div id="emergency" class="page">
+        <section class="emergency-hero">
+            <div class="container">
+                <h1>Emergency Response</h1>
+                <p>When disaster strikes, we're among the first to respond and the last to leave. We provide life-saving aid to children and families in crisis.</p>
+            </div>
+        </section>
+
+        <section class="crisis-section">
+            <div class="container">
+                <h2 class="section-title">Active Crises</h2>
+                <div class="crisis-grid">
+                    <div class="crisis-card">
+                        <div class="crisis-image" style="background: #e74c3c;">🍼</div>
+                        <div class="crisis-content">
+                            <h3>Gaza Famine Crisis</h3>
+                            <p>We're providing emergency nutrition, medical care, and protection services to children and families affected by the famine in Gaza.</p>
+                            
+                            <div class="crisis-stats">
+                                <div class="crisis-stat">
+                                    <div class="number">132K</div>
+                                    <div class="label">Children at Risk</div>
+                                </div>
+                                <div class="crisis-stat">
+                                    <div class="number">27K</div>
+                                    <div class="label">Families Reached</div>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">Donate to Gaza Relief</a>
+                        </div>
+                    </div>
+                    
+                    <div class="crisis-card">
+                        <div class="crisis-image" style="background: #f39c12;">🏚️</div>
+                        <div class="crisis-content">
+                            <h3>Afghanistan Earthquake</h3>
+                            <p>Our emergency teams are on the ground providing shelter, medical aid, and essential supplies to families affected by the earthquake.</p>
+                            
+                            <div class="crisis-stats">
+                                <div class="crisis-stat">
+                                    <div class="number">1.2K</div>
+                                    <div class="label">People Killed</div>
+                                </div>
+                                <div class="crisis-stat">
+                                    <div class="number">5K+</div>
+                                    <div class="label">Children Impacted</div>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">Support Afghanistan</a>
+                        </div>
+                    </div>
+                    
+                    <div class="crisis-card">
+                        <div class="crisis-image" style="background: #3498db;">🌧️</div>
+                        <div class="crisis-content">
+                            <h3>Bangladesh Floods</h3>
+                            <p>Severe flooding has displaced millions. We're providing clean water, sanitation, and emergency shelter to affected communities.</p>
+                            
+                            <div class="crisis-stats">
+                                <div class="crisis-stat">
+                                    <div class="number">4M</div>
+                                    <div class="label">People Affected</div>
+                                </div>
+                                <div class="crisis-stat">
+                                    <div class="number">1.5M</div>
+                                    <div class="label">Children at Risk</div>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">Help Flood Victims</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Financials</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Work</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Emergency Response</a></li>
+                        <li><a href="#">Health & Nutrition</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Child Protection</a></li>
+                        <li><a href="#">Where We Work</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="donate">Donate</a></li>
+                        <li><a href="#">Fundraise</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Partner With Us</a></li>
+                        <li><a href="#">Advocate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <p>Stay updated on our work and how you can help make a difference.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">ig</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HopeForChildren. All rights reserved. | Charity Registration Number: 12345</p>
+                <p><a href="#" style="color: #ccc;">Privacy Policy</a> | <a href="#" style="color: #ccc;">Terms of Service</a> | <a href="#" style="color: #ccc;">Cookie Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation and Page Switching
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Page navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                    
+                    // Get target page
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Update active nav link
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show target page
+                    pages.forEach(page => page.classList.remove('active'));
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+            
+            // Donation type selection
+            const donationOptions = document.querySelectorAll('.donation-option');
+            donationOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    donationOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Amount selection
+            const amountOptions = document.querySelectorAll('.amount-option');
+            amountOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    amountOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById('custom-amount').value = '';
+                });
+            });
+            
+            // Custom amount input
+            const customAmount = document.getElementById('custom-amount');
+            customAmount.addEventListener('focus', function() {
+                amountOptions.forEach(opt => opt.classList.remove('active'));
+            });
+            
+            // Animate stats counter
+            const stats = document.querySelectorAll('.stat .number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const stat = entry.target;
+                        const target = parseInt(stat.getAttribute('data-count'));
+                        const duration = 2000; // 2 seconds
+                        const step = target / (duration / 16); // 60fps
+                        let current = 0;
+                        
+                        const updateCount = () => {
+                            current += step;
+                            if (current < target) {
+                                stat.textContent = Math.floor(current).toLocaleString();
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                stat.textContent = target.toLocaleString();
+                            }
+                        };
+                        
+                        updateCount();
+                        observer.unobserve(stat);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            stats.forEach(stat => observer.observe(stat));
+            
+            // Make all buttons with data-page attribute work for navigation
+            document.querySelectorAll('[data-page]').forEach(button => {
+                if (button.classList.contains('nav-link')) return; // Skip nav links already handled
+                
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Update active nav link
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    document.querySelector(`.nav-link[data-page="${targetPage}"]`).classList.add('active');
+                    
+                    // Show target page
+                    pages.forEach(page => page.classList.remove('active'));
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
