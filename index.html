@@ -6,7 +6,6 @@
     <title>HopeForChildren | Protecting Children Worldwide</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* All existing CSS remains the same */
         /* Reset and Base Styles */
         * {
             margin: 0;
@@ -759,6 +758,76 @@
             color: #666;
         }
 
+        /* New Page Styles */
+        .page-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .content-section {
+            padding: 5rem 0;
+        }
+
+        .content-section.light {
+            background: var(--light);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .content-text h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+
+        .content-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .program-details {
+            margin-top: 3rem;
+        }
+
+        .program-detail {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .program-detail h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .program-detail p {
+            color: #666;
+            line-height: 1.7;
+        }
+
         /* Footer */
         .footer {
             background: var(--dark);
@@ -827,151 +896,9 @@
             color: #ccc;
         }
 
-        /* New Pages Styles */
-        .page-hero {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-            margin-top: -80px;
-        }
-
-        .content-section {
-            padding: 5rem 0;
-        }
-
-        .content-section:nth-child(even) {
-            background: var(--light);
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .content-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .content-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .content-card h3 {
-            color: var(--dark);
-            margin-bottom: 1.2rem;
-            font-size: 1.5rem;
-        }
-
-        .content-card p {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        .financial-section {
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .financial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .financial-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .financial-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-
-        .financial-card p {
-            color: var(--dark);
-            font-weight: 500;
-        }
-
-        .contact-section {
-            padding: 5rem 0;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info h3 {
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-details {
-            margin-bottom: 2rem;
-        }
-
-        .contact-details p {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
         /* Responsive Design */
         @media (max-width: 992px) {
-            .mission-content {
+            .mission-content, .content-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -982,10 +909,6 @@
             
             .newsletter-form {
                 flex-direction: column;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -1060,7 +983,10 @@
             <button class="mobile-menu-btn">☰</button>
             <ul class="nav-menu">
                 <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="mission">Mission</a></li>
                 <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#" class="nav-link" data-page="health">Health & Nutrition</a></li>
+                <li><a href="#" class="nav-link" data-page="protection">Child Protection</a></li>
                 <li><a href="#" class="nav-link" data-page="emergency">Emergencies</a></li>
                 <li><a href="#" class="nav-link donate-btn" data-page="donate">Donate Now</a></li>
             </ul>
@@ -1069,7 +995,6 @@
 
     <!-- Home Page -->
     <div id="home" class="page active">
-        <!-- Existing home page content remains the same -->
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
@@ -1160,7 +1085,7 @@
                         <div class="program-content">
                             <h3>HEALTH & NUTRITION</h3>
                             <p>Providing life-saving healthcare, nutrition support, and medical supplies to children in crisis zones and underserved communities.</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <a href="#" class="btn btn-primary" data-page="health">Learn More</a>
                         </div>
                     </div>
                     <div class="program-card">
@@ -1180,16 +1105,16 @@
                         <div class="program-content">
                             <h3>PROTECTION</h3>
                             <p>Safeguarding children from violence, exploitation, abuse, and harm through community-based protection systems.</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <a href="#" class="btn btn-primary" data-page="protection">Learn More</a>
                         </div>
                     </div>
                     <div class="program-card">
                         <div class="program-image">
-                            <img src="https://i.stci.uk/dam/a-save-the-children-community-based-class-in-kabul-afghanistan-ch1668939.jpg/c63c753d1653o1c1401ly8csp66cb261.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=7hP8Yq3I" alt="Emergency response team">
+                            <img src="https://i.stci.uk/dam/a-save-the-children-community-based-class-in-kabul-afghanistan-ch1668939.jpg/c63c753d1653o1c1401ly8csp66cb261.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=LOWnnUit" alt="Community resilience training">
                         </div>
                         <div class="program-content">
-                            <h3>EMERGENCY RESPONSE</h3>
-                            <p>Rapidly responding to natural disasters, conflicts, and crises to protect children when they need us most.</p>
+                            <h3>RESILIENCE</h3>
+                            <p>Helping communities build resilience against disasters, climate change, and economic shocks.</p>
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
@@ -1197,27 +1122,29 @@
             </div>
         </section>
 
-        <!-- Newsletter -->
+        <!-- Newsletter Section -->
         <section class="newsletter-section">
             <div class="container">
                 <div class="newsletter-container">
-                    <h2>Stay Informed</h2>
-                    <p>Join our mailing list to receive updates on our work and learn how you can help protect children worldwide.</p>
-                    <form class="newsletter-form">
+                    <h2 class="section-title" style="color: white;">Stay Informed</h2>
+                    <p>Subscribe to our newsletter to receive updates on our work and learn how you can help children in need.</p>
+                    <form class="newsletter-form" id="newsletter-form">
                         <input type="email" class="newsletter-input" placeholder="Your email address" required>
                         <button type="submit" class="newsletter-btn">Subscribe</button>
                     </form>
+                    <div id="newsletter-message" style="margin-top: 1rem;"></div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">We respect your privacy. You can unsubscribe at any time.</p>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- About Page -->
-    <div id="about" class="page">
+    <!-- Mission Page -->
+    <div id="mission" class="page">
         <section class="page-hero">
             <div class="container">
-                <h1>About HopeForChildren</h1>
-                <p>For over 100 years, we've been fighting for children's rights and saving children's lives</p>
+                <h1>Our Mission</h1>
+                <p>To inspire breakthroughs in the way the world treats children and to achieve immediate and lasting change in their lives.</p>
             </div>
         </section>
 
@@ -1225,33 +1152,63 @@
             <div class="container">
                 <div class="mission-content">
                     <div class="mission-text">
-                        <h2>Our Mission</h2>
-                        <p>HopeForChildren is the world's leading independent organization for children. We work in over 80 countries to save children's lives, fight for their rights, and help them fulfill their potential.</p>
-                        <p>Founded in 1919, we respond to major emergencies, deliver innovative development programs, and ensure children's voices are heard through our campaigning to build a better world for and with children.</p>
-                        <p>We believe every child deserves a future. In the United States and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm.</p>
+                        <h2>Our Vision</h2>
+                        <p>We believe every child deserves a future. In the United States and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm. We do whatever it takes for children – every day and in times of crisis – transforming their lives and the future we share.</p>
+                        <p>Founded in 1919, HopeForChildren has been on the front lines of the world's most challenging crises for over 100 years. We've evolved from a small relief organization to a global movement that reaches millions of children each year.</p>
+                        <p>Our approach combines direct program implementation with advocacy and partnerships to create lasting change for children. We work closely with communities, governments, and other organizations to ensure children's rights are protected and their needs are met.</p>
                     </div>
                     <div class="mission-image">
-                        <img src="https://i.stci.uk/dam/children-play-in-afghanistan-anonymised-version-ch1582011.jpg/p7bk516ivfw1cajym542fb5230e36uf0.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=gmSBp5ph" alt="Children playing">
+                        <img src="https://i.stci.uk/dam/a-save-the-children-community-based-class-in-kabul-afghanistan-ch1668939.jpg/c63c753d1653o1c1401ly8csp66cb261.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=LOWnnUit" alt="Children in a community-based class">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section light">
             <div class="container">
-                <h2 class="section-title">Our Approach</h2>
-                <div class="content-grid">
-                    <div class="content-card">
-                        <h3>Child-Centered</h3>
-                        <p>We put children at the center of everything we do. Our programs are designed with their needs, rights, and voices in mind.</p>
+                <h2 class="section-title">Our Values</h2>
+                <div class="program-details">
+                    <div class="program-detail">
+                        <h3>Accountability</h3>
+                        <p>We take responsibility for using our resources efficiently, achieving measurable results, and being accountable to supporters, partners and, most of all, children.</p>
                     </div>
-                    <div class="content-card">
-                        <h3>Evidence-Based</h3>
-                        <p>Our work is grounded in research and evidence. We continuously evaluate our programs to ensure maximum impact.</p>
+                    <div class="program-detail">
+                        <h3>Ambition</h3>
+                        <p>We demand the best for children and are committed to making lasting change. We are creative in our approach and bold in our actions.</p>
                     </div>
-                    <div class="content-card">
-                        <h3>Partnership-Driven</h3>
-                        <p>We work with communities, governments, and local organizations to create sustainable change for children.</p>
+                    <div class="program-detail">
+                        <h3>Collaboration</h3>
+                        <p>We respect and value each other, thrive on our diversity, and work with partners to leverage our global strength in making a difference for children.</p>
+                    </div>
+                    <div class="program-detail">
+                        <h3>Integrity</h3>
+                        <p>We aspire to live to the highest standards of personal honesty and behavior; we never compromise our reputation and always act in the best interests of children.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about" class="page">
+        <section class="about-hero">
+            <div class="container">
+                <h1>About Us</h1>
+                <p>For over 100 years, we've been fighting for children's rights and saving children's lives.</p>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h2>Our Story</h2>
+                        <p>HopeForChildren was founded in 1919 by Eglantyne Jebb in response to the devastating impact of World War I on children. Her revolutionary idea was that children have rights, regardless of who they are or where they're from. This vision led to the creation of the first Declaration of the Rights of the Child, which later inspired the UN Convention on the Rights of the Child.</p>
+                        <p>Today, we work in over 80 countries, including the United States, reaching millions of children each year through our programs in health, nutrition, education, protection and child rights. We're committed to ensuring that every child has the opportunity to grow up healthy, educated and safe.</p>
+                        <p>Our work is guided by our Global Strategy, which focuses on three breakthroughs for children by 2030: Survive, Learn, and Be Protected. We believe that together with our partners, donors, and supporters, we can achieve these ambitious goals.</p>
+                    </div>
+                    <div class="mission-image">
+                        <img src="https://i.stci.uk/dam/children-play-in-afghanistan-anonymised-version-ch1582011.jpg/p7bk516ivfw1cajym542fb5230e36uf0.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=gmSBp5ph" alt="Children playing in Afghanistan">
                     </div>
                 </div>
             </div>
@@ -1263,54 +1220,133 @@
                 <div class="team-grid">
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="https://i.stci.uk/dam/portrait-of-a-save-the-children-staff-member-ch1813382.jpg/3c4n1p1c4p8q1n0q8j6n8p1c2j8q5v8p.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=5zK2gV3J" alt="CEO">
+                            <img src="https://i.stci.uk/dam/portrait-of-a-save-the-children-staff-member-ch1668940.jpg/3k1f7v1v0f0s8w8k7p8q6k5w7c8c8c8c.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=QK4t9w-R" alt="Jahan Zeb, CEO">
                         </div>
                         <div class="member-info">
-                            <h3>Sarah Johnson</h3>
+                            <h3>Jahan Zeb</h3>
                             <div class="member-role">Chief Executive Officer</div>
-                            <p class="member-bio">Sarah has dedicated her career to children's rights, with over 20 years of experience in humanitarian work across Africa and Asia.</p>
+                            <p class="member-bio">Jahan has over 20 years of experience in humanitarian work and child rights advocacy. Under his leadership, HopeForChildren has expanded its reach to over 80 countries.</p>
                         </div>
                     </div>
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="https://i.stci.uk/dam/portrait-of-a-save-the-children-staff-member-ch1813382.jpg/3c4n1p1c4p8q1n0q8j6n8p1c2j8q5v8p.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=5zK2gV3J" alt="Program Director">
+                            <img src="https://i.stci.uk/dam/portrait-of-a-save-the-children-staff-member-ch1668941.jpg/3k1f7v1v0f0s8w8k7p8q6k5w7c8c8c8c.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=QK4t9w-R" alt="Dr. Amina Hassan">
+                        </div>
+                        <div class="member-info">
+                            <h3>Dr. Amina Hassan</h3>
+                            <div class="member-role">Global Program Director</div>
+                            <p class="member-bio">Dr. Hassan leads our global programs with expertise in public health and child development. She has been instrumental in designing our health and nutrition initiatives.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://i.stci.uk/dam/portrait-of-a-save-the-children-staff-member-ch1668942.jpg/3k1f7v1v0f0s8w8k7p8q6k5w7c8c8c8c.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=QK4t9w-R" alt="Michael Chen">
                         </div>
                         <div class="member-info">
                             <h3>Michael Chen</h3>
-                            <div class="member-role">Global Program Director</div>
-                            <p class="member-bio">Michael oversees our programs in over 80 countries, ensuring we deliver high-impact interventions for children in need.</p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="https://i.stci.uk/dam/portrait-of-a-save-the-children-staff-member-ch1813382.jpg/3c4n1p1c4p8q1n0q8j6n8p1c2j8q5v8p.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=5zK2gV3J" alt="Medical Director">
-                        </div>
-                        <div class="member-info">
-                            <h3>Dr. Amina Jalloh</h3>
-                            <div class="member-role">Medical Director</div>
-                            <p class="member-bio">Dr. Jalloh leads our health and nutrition programs, bringing expertise from her work in emergency medicine and public health.</p>
+                            <div class="member-role">Director of Emergency Response</div>
+                            <p class="member-bio">Michael coordinates our emergency responses worldwide, bringing extensive experience in disaster management and humanitarian coordination.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    </div>
 
-        <section class="financial-section">
+    <!-- Health & Nutrition Page -->
+    <div id="health" class="page">
+        <section class="page-hero">
             <div class="container">
-                <h2 class="section-title">Financial Transparency</h2>
-                <p>We are committed to using your donations effectively and efficiently.</p>
-                <div class="financial-grid">
-                    <div class="financial-card">
-                        <h3>85%</h3>
-                        <p>Programs & Services</p>
+                <h1>Health & Nutrition</h1>
+                <p>Ensuring children survive and thrive through access to quality healthcare and proper nutrition.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <h2>Saving Children's Lives</h2>
+                        <p>Every day, nearly 15,000 children under the age of five die from preventable causes. We're working to change that by providing life-saving healthcare and nutrition to children in the world's poorest communities.</p>
+                        <p>Our health programs focus on maternal and child health, immunization, treatment of common childhood illnesses, and strengthening health systems. We train health workers, equip clinics, and work with communities to promote healthy practices.</p>
+                        <p>Our nutrition programs address both immediate and underlying causes of malnutrition. We provide therapeutic feeding for severely malnourished children, support breastfeeding, promote diverse diets, and address food security issues.</p>
                     </div>
-                    <div class="financial-card">
-                        <h3>10%</h3>
-                        <p>Administrative Costs</p>
+                    <div class="content-image">
+                        <img src="https://i.stci.uk/dam/kamila-5-months-being-treated-for-malnutrition-held-by-her-mother-ch1873549.jpg/u46mj05qy6x0r042j7q7xg86518os148.jpg?g=0.5x0.33&w=1018&h=720&format=webp&itok=EPp1dCVt" alt="Child receiving medical treatment">
                     </div>
-                    <div class="financial-card">
-                        <h3>5%</h3>
-                        <p>Fundraising</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section light">
+            <div class="container">
+                <h2 class="section-title">Our Approach</h2>
+                <div class="program-details">
+                    <div class="program-detail">
+                        <h3>Community Health</h3>
+                        <p>We train and support community health workers to provide basic health services, health education, and referrals in hard-to-reach areas where formal health facilities are scarce.</p>
+                    </div>
+                    <div class="program-detail">
+                        <h3>Emergency Health Response</h3>
+                        <p>In crises, we deploy emergency health units to provide immediate medical care, prevent disease outbreaks, and support local health systems to continue functioning.</p>
+                    </div>
+                    <div class="program-detail">
+                        <h3>Nutrition Programs</h3>
+                        <p>We screen children for malnutrition, provide therapeutic feeding, support infant and young child feeding practices, and address the underlying causes of malnutrition.</p>
+                    </div>
+                    <div class="program-detail">
+                        <h3>Health System Strengthening</h3>
+                        <p>We work with governments to strengthen health systems, improve supply chains for essential medicines, and build the capacity of health workers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Child Protection Page -->
+    <div id="protection" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Child Protection</h1>
+                <p>Keeping children safe from harm, abuse, exploitation, and violence.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <h2>Protecting Children's Rights</h2>
+                        <p>Every child has the right to grow up safe from harm. Yet millions of children worldwide experience violence, exploitation, and abuse. We work to prevent and respond to these violations of children's rights.</p>
+                        <p>Our child protection programs focus on preventing and responding to violence, exploitation, and abuse. We work with children, families, communities, and governments to create protective environments where children can thrive.</p>
+                        <p>In emergencies, we establish child-friendly spaces where children can be safe, play, and receive psychosocial support. We also work to reunite separated children with their families and provide alternative care when needed.</p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://i.stci.uk/dam/CH1751628_A_group_of_women_and_children_waiting_in_line_to_buy_water_in_Baidoa,_Somalia-(1)-(1)-(1).-ch1751628.jpg/pe3pk287wvw04oaq81708p3u3yhfx2t8.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=eh8NNqs9" alt="Children in a protective environment">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section light">
+            <div class="container">
+                <h2 class="section-title">Our Protection Work</h2>
+                <div class="program-details">
+                    <div class="program-detail">
+                        <h3>Child-Friendly Spaces</h3>
+                        <p>In emergencies, we establish safe spaces where children can play, learn, and receive psychosocial support. These spaces protect children from harm and help them cope with trauma.</p>
+                    </div>
+                    <div class="program-detail">
+                        <h3>Family Tracing and Reunification</h3>
+                        <p>When children are separated from their families in emergencies, we work to trace and reunite them with their relatives as quickly as possible.</p>
+                    </div>
+                    <div class="program-detail">
+                        <h3>Community-Based Protection</h3>
+                        <p>We work with communities to establish child protection committees and systems that identify, prevent, and respond to child protection risks.</p>
+                    </div>
+                    <div class="program-detail">
+                        <h3>Advocacy for Child Rights</h3>
+                        <p>We advocate for laws, policies, and practices that protect children from violence, exploitation, and abuse, and promote their rights and well-being.</p>
                     </div>
                 </div>
             </div>
@@ -1322,32 +1358,32 @@
         <section class="emergency-hero">
             <div class="container">
                 <h1>Emergency Response</h1>
-                <p>When disaster strikes, children are always the most vulnerable. We're there when they need us most.</p>
+                <p>Rapidly responding to disasters and conflicts to save children's lives and protect their futures.</p>
             </div>
         </section>
 
         <section class="crisis-section">
             <div class="container">
-                <h2 class="section-title">Active Crises</h2>
+                <h2 class="section-title">Current Crises</h2>
                 <div class="crisis-grid">
                     <div class="crisis-card">
                         <div class="crisis-image">
                             <img src="https://i.stci.uk/dam/abdi-17-months-is-measured-for-signs-of-malnutrition-with-a-muac-band-which-shows-yellow-ch1873527.jpg/07iyj1q434j1y44f053l6qgaldy73v63.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=47-iCnvn" alt="Gaza crisis">
                         </div>
                         <div class="crisis-content">
-                            <h3>Famine in Gaza</h3>
-                            <p>Famine has been officially confirmed in Gaza. Children are dying from malnutrition and preventable diseases. Our teams are working around the clock to deliver life-saving aid.</p>
+                            <h3>Gaza: Famine Crisis</h3>
+                            <p>Famine has been officially confirmed in Gaza. Children are starving to death in plain sight. At least 132,000 children under five are at risk of death from acute malnutrition.</p>
                             <div class="crisis-stats">
                                 <div class="crisis-stat">
-                                    <div class="number">132,000+</div>
+                                    <div class="number">132K</div>
                                     <div class="label">Children at Risk</div>
                                 </div>
                                 <div class="crisis-stat">
-                                    <div class="number">27</div>
-                                    <div class="label">Children Starved</div>
+                                    <div class="number">85%</div>
+                                    <div class="label">Displaced</div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary" data-page="donate">Donate Now</a>
+                            <a href="#" class="btn btn-primary" data-page="donate">Help Now</a>
                         </div>
                     </div>
                     <div class="crisis-card">
@@ -1356,63 +1392,63 @@
                         </div>
                         <div class="crisis-content">
                             <h3>Afghanistan Earthquake</h3>
-                            <p>A devastating 6.0 magnitude earthquake has struck Afghanistan, killing hundreds and leaving thousands of children homeless and vulnerable.</p>
+                            <p>A devastating 6.0 magnitude earthquake has struck Afghanistan. Hundreds have been killed and thousands of children have been impacted. Tremors are still occurring intermittently.</p>
                             <div class="crisis-stats">
                                 <div class="crisis-stat">
-                                    <div class="number">1,000+</div>
-                                    <div class="label">Children Impacted</div>
+                                    <div class="number">280+</div>
+                                    <div class="label">Deaths</div>
                                 </div>
                                 <div class="crisis-stat">
-                                    <div class="number">15+</div>
-                                    <div class="label">Aftershocks</div>
+                                    <div class="number">1.2K</div>
+                                    <div class="label">Injured</div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary" data-page="donate">Donate Now</a>
+                            <a href="#" class="btn btn-primary" data-page="donate">Help Now</a>
                         </div>
                     </div>
                     <div class="crisis-card">
                         <div class="crisis-image">
-                            <img src="https://i.stci.uk/dam/a-save-the-children-staff-member-stands-in-front-of-a-save-the-children-vehicle-in-sudan-ch1828290.jpg/1v8j7k6x5e2i1r6p8q3n8p1c2j8q5v8p.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=5zK2gV3J" alt="Sudan conflict">
+                            <img src="https://i.stci.uk/dam/adno-and-her-children-at-home--karkar-region-ch11386088.jpg/476e3uryr5shij47qi30757n5h83rj08.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=feVilnR3" alt="Climate crisis">
                         </div>
                         <div class="crisis-content">
-                            <h3>Conflict in Sudan</h3>
-                            <p>Ongoing conflict has displaced millions and created one of the world's worst humanitarian crises. Children are facing violence, hunger, and disease.</p>
+                            <h3>Climate Crisis Impact</h3>
+                            <p>Extreme weather events are displacing millions of children and threatening their access to food, water, and education. We're responding to climate-related emergencies worldwide.</p>
                             <div class="crisis-stats">
                                 <div class="crisis-stat">
-                                    <div class="number">14M</div>
-                                    <div class="label">Children in Need</div>
+                                    <div class="number">43M</div>
+                                    <div class="label">Displaced in 2023</div>
                                 </div>
                                 <div class="crisis-stat">
-                                    <div class="number">4M</div>
-                                    <div class="label">Displaced</div>
+                                    <div class="number">774M</div>
+                                    <div class="label">Facing Extreme Heat</div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary" data-page="donate">Donate Now</a>
+                            <a href="#" class="btn btn-primary" data-page="donate">Help Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section light">
             <div class="container">
                 <h2 class="section-title">Our Emergency Response Approach</h2>
-                <div class="content-grid">
-                    <div class="content-card">
+                <div class="program-details">
+                    <div class="program-detail">
                         <h3>Rapid Assessment</h3>
-                        <p>Within hours of a crisis, our teams are on the ground assessing needs and coordinating with local partners.</p>
+                        <p>Within hours of a disaster, our teams are on the ground assessing needs and determining the most effective response to save lives and protect children.</p>
                     </div>
-                    <div class="content-card">
-                        <h3>Life-Saving Aid</h3>
-                        <p>We provide emergency food, clean water, medical care, and shelter to children and families affected by disasters.</p>
+                    <div class="program-detail">
+                        <h3>Life-Saving Assistance</h3>
+                        <p>We provide emergency shelter, food, water, sanitation, and healthcare to meet the immediate needs of children and families affected by crises.</p>
                     </div>
-                    <div class="content-card">
-                        <h3>Child Protection</h3>
-                        <p>We establish safe spaces for children and work to reunite separated families during emergencies.</p>
+                    <div class="program-detail">
+                        <h3>Child Protection in Emergencies</h3>
+                        <p>We establish child-friendly spaces, provide psychosocial support, work to reunite separated children with their families, and protect children from harm.</p>
                     </div>
-                    <div class="content-card">
-                        <h3>Long-Term Recovery</h3>
-                        <p>We stay after the immediate crisis to help communities rebuild and become more resilient to future disasters.</p>
+                    <div class="program-detail">
+                        <h3>Education in Emergencies</h3>
+                        <p>We set up temporary learning spaces and provide education materials to ensure children can continue learning even during crises.</p>
                     </div>
                 </div>
             </div>
@@ -1423,8 +1459,8 @@
     <div id="donate" class="page">
         <section class="donate-hero">
             <div class="container">
-                <h1>Donate to Save Children</h1>
-                <p>Your donation can provide life-saving support to children in crisis around the world.</p>
+                <h1>Donate Now</h1>
+                <p>Your donation can save children's lives and protect their futures.</p>
             </div>
         </section>
 
@@ -1432,66 +1468,63 @@
             <div class="container">
                 <div class="donation-container">
                     <div class="donation-options">
-                        <h2>Make a Donation</h2>
+                        <h2 style="margin-bottom: 2rem; color: var(--dark);">Make a Donation</h2>
+                        
                         <div class="donation-type">
-                            <div class="donation-option active" data-type="one-time">One-Time</div>
-                            <div class="donation-option" data-type="monthly">Monthly</div>
+                            <div class="donation-option active" data-type="one-time">One-Time Gift</div>
+                            <div class="donation-option" data-type="monthly">Monthly Gift</div>
                         </div>
+                        
                         <div class="amount-options">
                             <div class="amount-option" data-amount="25">$25</div>
                             <div class="amount-option" data-amount="50">$50</div>
                             <div class="amount-option" data-amount="100">$100</div>
                             <div class="amount-option" data-amount="250">$250</div>
                         </div>
+                        
                         <div class="custom-amount">
-                            <label for="custom-amount">Other Amount</label>
+                            <label for="custom-amount">Other Amount ($)</label>
                             <input type="number" id="custom-amount" placeholder="Enter amount">
                         </div>
-                        <button class="btn btn-primary" style="width: 100%;">Donate Now</button>
+                        
+                        <div class="donation-impact-image" style="margin-bottom: 2rem; border-radius: 10px; overflow: hidden;">
+                            <img src="https://i.stci.uk/dam/eileen-49-holds-her-one-day-old-granddaughter-lana-at-a-save-the-children-maternity-unit-gaza-ch11035363.jpg/020lt5v25cm8ib666v6i1431gp0p3pbs.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=1WU7R2r7" alt="Eileen holds her one-day-old granddaughter Lana at a maternity unit in Gaza" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        
+                        <button class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.2rem;">Donate Now</button>
+                        
+                        <p style="margin-top: 1rem; text-align: center; color: #666; font-size: 0.9rem;">Your donation is secure and tax-deductible.</p>
                     </div>
+                    
                     <div class="donation-impact">
                         <h3 class="impact-title">Your Impact</h3>
                         <ul class="impact-list">
                             <li>
                                 <span class="impact-icon">✓</span>
-                                <span>$25 can provide a month's supply of therapeutic food for a malnourished child</span>
+                                <span>$50 can provide a month's supply of nutritious food for a malnourished child</span>
                             </li>
                             <li>
                                 <span class="impact-icon">✓</span>
-                                <span>$50 can provide emergency shelter for a family displaced by disaster</span>
+                                <span>$100 can provide emergency shelter for a family displaced by disaster</span>
                             </li>
                             <li>
                                 <span class="impact-icon">✓</span>
-                                <span>$100 can provide school supplies for 30 children</span>
+                                <span>$250 can provide life-saving medical care for 10 children</span>
                             </li>
                             <li>
                                 <span class="impact-icon">✓</span>
-                                <span>$250 can provide clean water for a community for one month</span>
+                                <span>$500 can establish a child-friendly space in an emergency</span>
+                            </li>
+                            <li>
+                                <span class="impact-icon">✓</span>
+                                <span>$1,000 can provide education supplies for 50 children</span>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="container">
-                <h2 class="section-title">Other Ways to Give</h2>
-                <div class="content-grid">
-                    <div class="content-card">
-                        <h3>Corporate Partnerships</h3>
-                        <p>Partner with us to create meaningful change for children through employee giving, cause marketing, and more.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                    <div class="content-card">
-                        <h3>Planned Giving</h3>
-                        <p>Include HopeForChildren in your estate plans to create a lasting legacy for children in need.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                    <div class="content-card">
-                        <h3>Fundraise</h3>
-                        <p>Start your own fundraiser to support our work and engage your community in helping children.</p>
-                        <a href="#" class="btn btn-primary">Get Started</a>
+                        
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px;">
+                            <h4 style="margin-bottom: 1rem; color: var(--dark);">Why Give to HopeForChildren?</h4>
+                            <p style="color: #666; line-height: 1.6;">85% of every dollar we spend goes directly to programs that help children. We have received the highest ratings from charity watchdog organizations for our efficiency and transparency.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1504,43 +1537,46 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>HopeForChildren</h3>
-                    <p>We believe every child deserves a future. Since 1919, we've been protecting children and ensuring their rights worldwide.</p>
+                    <p style="color: #ccc; line-height: 1.6;">We believe every child deserves a future. Since 1919, we've been giving children around the world a healthy start, the opportunity to learn and protection from harm.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" data-page="home">Home</a></li>
-                        <li><a href="#" data-page="about">About Us</a></li>
-                        <li><a href="#" data-page="emergency">Emergencies</a></li>
-                        <li><a href="#" data-page="donate">Donate</a></li>
-                    </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Our Work</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Health & Nutrition</a></li>
+                        <li><a href="#" data-page="health">Health & Nutrition</a></li>
+                        <li><a href="#" data-page="protection">Child Protection</a></li>
+                        <li><a href="#" data-page="emergency">Emergency Response</a></li>
                         <li><a href="#">Education</a></li>
-                        <li><a href="#">Child Protection</a></li>
-                        <li><a href="#">Emergency Response</a></li>
+                        <li><a href="#">Child Rights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="donate">Donate</a></li>
+                        <li><a href="#">Fundraise</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Partner With Us</a></li>
+                        <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:+18005551234">1-800-555-1234</a></li>
                         <li><a href="mailto:info@hopeforchildren.org">info@hopeforchildren.org</a></li>
-                        <li>1234 Hope Street, Suite 100<br>New York, NY 10001</li>
+                        <li><a href="tel:+1-800-123-4567">1-800-123-4567</a></li>
+                        <li>123 Hope Street, City, Country</li>
+                        <li><a href="#">Media Inquiries</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 HopeForChildren. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2023 HopeForChildren. All rights reserved. | <a href="#" style="color: #ccc;">Privacy Policy</a> | <a href="#" style="color: #ccc;">Terms of Service</a></p>
             </div>
         </div>
     </footer>
@@ -1548,47 +1584,57 @@
     <script>
         // Page Navigation
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navMenu = document.querySelector('.nav-menu');
             
+            // Function to show a specific page
+            function showPage(pageId) {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show the selected page
+                document.getElementById(pageId).classList.add('active');
+                
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+            }
+            
+            // Add click event to nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                    
+                    // Scroll to top when navigating
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Mobile menu toggle
             mobileMenuBtn.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
             });
             
-            // Page navigation
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pages = document.querySelectorAll('.page');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Close mobile menu if open
-                    navMenu.classList.remove('active');
-                    
-                    // Get target page
-                    const targetPage = this.getAttribute('data-page');
-                    
-                    // Update active nav link
-                    navLinks.forEach(navLink => navLink.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Show target page
-                    pages.forEach(page => {
-                        page.classList.remove('active');
-                        if (page.id === targetPage) {
-                            page.classList.add('active');
-                        }
-                    });
-                    
-                    // Scroll to top
-                    window.scrollTo(0, 0);
-                });
-            });
-            
-            // Donation type toggle
+            // Donation options functionality
             const donationOptions = document.querySelectorAll('.donation-option');
+            const amountOptions = document.querySelectorAll('.amount-option');
+            
             donationOptions.forEach(option => {
                 option.addEventListener('click', function() {
                     donationOptions.forEach(opt => opt.classList.remove('active'));
@@ -1596,53 +1642,78 @@
                 });
             });
             
-            // Donation amount selection
-            const amountOptions = document.querySelectorAll('.amount-option');
             amountOptions.forEach(option => {
                 option.addEventListener('click', function() {
                     amountOptions.forEach(opt => opt.classList.remove('active'));
                     this.classList.add('active');
-                    
-                    // Update custom amount field
-                    const customAmount = document.getElementById('custom-amount');
-                    customAmount.value = '';
+                    document.getElementById('custom-amount').value = '';
                 });
             });
             
-            // Custom amount input clears selected amount
-            const customAmount = document.getElementById('custom-amount');
-            customAmount.addEventListener('input', function() {
+            // Custom amount input
+            document.getElementById('custom-amount').addEventListener('input', function() {
                 amountOptions.forEach(opt => opt.classList.remove('active'));
             });
             
+            // Newsletter form submission
+            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                const messageEl = document.getElementById('newsletter-message');
+                
+                // Simulate submission
+                messageEl.innerHTML = '<p style="color: white;">Thank you for subscribing! You will receive our next newsletter.</p>';
+                this.reset();
+                
+                // Clear message after 5 seconds
+                setTimeout(() => {
+                    messageEl.innerHTML = '';
+                }, 5000);
+            });
+            
             // Animate stats counter
-            const stats = document.querySelectorAll('.number');
+            function animateStats() {
+                const stats = document.querySelectorAll('.number[data-count]');
+                
+                stats.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    const duration = 2000; // 2 seconds
+                    const step = target / (duration / 16); // 60fps
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        
+                        if (stat.getAttribute('data-count') === '87' || 
+                            stat.getAttribute('data-count') === '100') {
+                            stat.textContent = Math.floor(current);
+                        } else if (stat.getAttribute('data-count') === '85') {
+                            stat.textContent = Math.floor(current) + '%';
+                        } else {
+                            stat.textContent = Math.floor(current).toLocaleString();
+                        }
+                    }, 16);
+                });
+            }
+            
+            // Trigger stats animation when they come into view
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const target = entry.target;
-                        const count = parseInt(target.getAttribute('data-count'));
-                        const duration = 2000; // 2 seconds
-                        const step = count / (duration / 16); // 60fps
-                        let current = 0;
-                        
-                        const timer = setInterval(() => {
-                            current += step;
-                            if (current >= count) {
-                                current = count;
-                                clearInterval(timer);
-                            }
-                            target.textContent = Math.floor(current).toLocaleString();
-                        }, 16);
-                        
-                        observer.unobserve(target);
+                        animateStats();
+                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.5 });
             
-            stats.forEach(stat => {
-                observer.observe(stat);
-            });
+            const statsSection = document.querySelector('.impact-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
         });
     </script>
 </body>
