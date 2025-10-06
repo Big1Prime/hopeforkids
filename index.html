@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HopeForChildren | Protecting Children Worldwide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
         * {
@@ -401,6 +402,48 @@
             line-height: 1.7;
         }
 
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 4rem 0;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            background: var(--primary-dark);
+        }
+
         /* About Page Styles */
         .about-hero {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
@@ -793,6 +836,10 @@
             .donation-container {
                 grid-template-columns: 1fr;
             }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 768px) {
@@ -916,7 +963,7 @@
                     </div>
                     <div class="alert-card warning">
                         <div class="alert-card-image">
-                            <img src="https://i.stci.uk/dam/abdi-17-months-is-measured-for-signs-of-malnutrition-with-a-muac-band-which-shows-yellow-ch1873527.jpg/07iyj1q434j1y44f053l6qgaldy73v63.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=47-iCnvn" alt="Children in need of support">
+                            <img src="https://i.stci.uk/dam/adno-and-her-children-at-home--karkar-region-ch11386088.jpg/476e3uryr5shij47qi30757n5h83rj08.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=feVilnR3" alt="Children in need of support">
                         </div>
                         <div class="alert-card-content">
                             <h3>💰 FOREIGN AID CUTS</h3>
@@ -980,7 +1027,7 @@
                     </div>
                     <div class="program-card">
                         <div class="program-image">
-                            <img src="https://i.stci.uk/dam/sima-7-months-is-screened-for-malnutrition-by-a-nutrition-nurse-at-save-the-childrens-mobile-health-clinic-ch1871812.JPG/dn0upvl5m3b32tpe6kj708063x01bgcu.JPG?g=0.5x0.33&w=2562&format=webp&itok=QK4t9w-R" alt="Child protection activities">
+                            <img src="https://i.stci.uk/dam/CH1751628_A_group_of_women_and_children_waiting_in_line_to_buy_water_in_Baidoa,_Somalia-(1)-(1)-(1).-ch1751628.jpg/pe3pk287wvw04oaq81708p3u3yhfx2t8.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=eh8NNqs9" alt="Child protection activities">
                         </div>
                         <div class="program-content">
                             <h3>PROTECTION</h3>
@@ -998,6 +1045,22 @@
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-container">
+                    <h2 class="section-title" style="color: white;">Stay Informed</h2>
+                    <p>Subscribe to our newsletter to receive updates on our work and learn how you can help children in need.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                    <div id="newsletter-message" style="margin-top: 1rem;"></div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">We respect your privacy. You can unsubscribe at any time.</p>
                 </div>
             </div>
         </section>
@@ -1264,10 +1327,21 @@
                     <h3>Connect</h3>
                     <p>Stay updated on our work and how you can help make a difference.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link">f</a>
-                        <a href="#" class="social-link">t</a>
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">ig</a>
+                        <a href="https://www.facebook.com/SavetheChildrenInternational" class="social-link" target="_blank" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/save_children" class="social-link" target="_blank" aria-label="Follow us on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/savethechildren" class="social-link" target="_blank" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/save-the-children-international" class="social-link" target="_blank" aria-label="Follow us on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@SavetheChildrenInternational" class="social-link" target="_blank" aria-label="Subscribe to our YouTube channel">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1340,6 +1414,50 @@
             customAmount.addEventListener('focus', function() {
                 amountOptions.forEach(opt => opt.classList.remove('active'));
             });
+            
+            // Newsletter functionality
+            const newsletterForm = document.getElementById('newsletter-form');
+            const newsletterMessage = document.getElementById('newsletter-message');
+            
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = this.querySelector('.newsletter-input').value;
+                
+                // Simple validation
+                if (!validateEmail(email)) {
+                    showNewsletterMessage('Please enter a valid email address.', 'error');
+                    return;
+                }
+                
+                // Simulate API call
+                showNewsletterMessage('Subscribing...', 'info');
+                
+                setTimeout(() => {
+                    // In a real application, this would be an actual API call
+                    showNewsletterMessage('Thank you for subscribing to our newsletter!', 'success');
+                    newsletterForm.reset();
+                }, 1500);
+            });
+            
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+            
+            function showNewsletterMessage(message, type) {
+                newsletterMessage.textContent = message;
+                newsletterMessage.className = ''; // Reset classes
+                
+                // Style based on message type
+                if (type === 'success') {
+                    newsletterMessage.style.color = '#27ae60';
+                } else if (type === 'error') {
+                    newsletterMessage.style.color = '#e74c3c';
+                } else {
+                    newsletterMessage.style.color = '#ffffff';
+                }
+            }
             
             // Animate stats counter
             const stats = document.querySelectorAll('.stat .number');
