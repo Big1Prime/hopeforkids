@@ -894,6 +894,77 @@
             padding-top: 2rem;
             border-top: 1px solid #34495e;
             color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-legal-links a:hover {
+            color: white;
+        }
+
+        /* Legal Pages Styles */
+        .legal-section {
+            padding: 5rem 0;
+        }
+
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legal-content h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+
+        .legal-content h3 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .legal-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-content ul {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin: 2rem 0;
+        }
+
+        .legal-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Responsive Design */
@@ -1110,12 +1181,12 @@
                     </div>
                     <div class="program-card">
                         <div class="program-image">
-                            <img src="https://i.stci.uk/dam/a-save-the-children-community-based-class-in-kabul-afghanistan-ch1668939.jpg/c63c753d1653o1c1401ly8csp66cb261.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=LOWnnUit" alt="Community resilience training">
+                            <img src="https://i.stci.uk/dam/a-save-the-children-community-based-class-in-kabul-afghanistan-ch1668939.jpg/c63c753d1653o1c1401ly8csp66cb261.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=Qv6jQ9pC" alt="Emergency response team">
                         </div>
                         <div class="program-content">
-                            <h3>RESILIENCE</h3>
-                            <p>Helping communities build resilience against disasters, climate change, and economic shocks.</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <h3>EMERGENCY RESPONSE</h3>
+                            <p>Rapidly responding to natural disasters, conflicts, and crises to protect children when they need us most.</p>
+                            <a href="#" class="btn btn-primary" data-page="emergency">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -1126,14 +1197,12 @@
         <section class="newsletter-section">
             <div class="container">
                 <div class="newsletter-container">
-                    <h2 class="section-title" style="color: white;">Stay Informed</h2>
-                    <p>Subscribe to our newsletter to receive updates on our work and learn how you can help children in need.</p>
-                    <form class="newsletter-form" id="newsletter-form">
+                    <h2>Stay Connected</h2>
+                    <p>Sign up for updates on our work and how you can help protect children worldwide.</p>
+                    <form class="newsletter-form">
                         <input type="email" class="newsletter-input" placeholder="Your email address" required>
                         <button type="submit" class="newsletter-btn">Subscribe</button>
                     </form>
-                    <div id="newsletter-message" style="margin-top: 1rem;"></div>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">We respect your privacy. You can unsubscribe at any time.</p>
                 </div>
             </div>
         </section>
@@ -1141,10 +1210,10 @@
 
     <!-- Mission Page -->
     <div id="mission" class="page">
-        <section class="page-hero">
+        <section class="about-hero">
             <div class="container">
                 <h1>Our Mission</h1>
-                <p>To inspire breakthroughs in the way the world treats children and to achieve immediate and lasting change in their lives.</p>
+                <p>To inspire breakthroughs in the way the world treats children, and to achieve immediate and lasting change in their lives.</p>
             </div>
         </section>
 
@@ -1153,43 +1222,64 @@
                 <div class="mission-content">
                     <div class="mission-text">
                         <h2>Our Vision</h2>
-                        <p>We believe every child deserves a future. In the United States and around the world, we give children a healthy start in life, the opportunity to learn and protection from harm. We do whatever it takes for children – every day and in times of crisis – transforming their lives and the future we share.</p>
-                        <p>Founded in 1919, HopeForChildren has been on the front lines of the world's most challenging crises for over 100 years. We've evolved from a small relief organization to a global movement that reaches millions of children each year.</p>
-                        <p>Our approach combines direct program implementation with advocacy and partnerships to create lasting change for children. We work closely with communities, governments, and other organizations to ensure children's rights are protected and their needs are met.</p>
+                        <p>We believe every child deserves a future. Since our founding in 1919, we've changed the lives of over 1 billion children.</p>
+                        <p>We work in the hardest-to-reach places, where it's toughest to be a child. We do whatever it takes to ensure children survive, get protection when they're in danger, and have the chance to learn.</p>
+                        <p>Our work is grounded in the UN Convention on the Rights of the Child, and we campaign tirelessly to make children's rights a reality.</p>
+                        <a href="#" class="btn btn-primary" data-page="about">Our History</a>
                     </div>
                     <div class="mission-image">
-                        <img src="https://i.stci.uk/dam/a-save-the-children-community-based-class-in-kabul-afghanistan-ch1668939.jpg/c63c753d1653o1c1401ly8csp66cb261.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=LOWnnUit" alt="Children in a community-based class">
+                        <img src="https://i.stci.uk/dam/children-play-in-afghanistan-anonymised-version-ch1582011.jpg/p7bk516ivfw1cajym542fb5230e36uf0.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=gmSBp5ph" alt="Children playing">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="content-section light">
+        <section class="team-section">
             <div class="container">
                 <h2 class="section-title">Our Values</h2>
-                <div class="program-details">
-                    <div class="program-detail">
-                        <h3>Accountability</h3>
-                        <p>We take responsibility for using our resources efficiently, achieving measurable results, and being accountable to supporters, partners and, most of all, children.</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://i.stci.uk/dam/children-in-a-save-the-children-child-friendly-space-in-ukraine-ch1678338.jpg/6b3f3q8h5q0h5u6n7v7e0i4c3g8w7d4o.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=3Rjz6NpW" alt="Accountability">
+                        </div>
+                        <div class="member-info">
+                            <h3>ACCOUNTABILITY</h3>
+                            <p>We take responsibility for using our resources efficiently, achieving measurable results, and being accountable to supporters, partners and, most of all, children.</p>
+                        </div>
                     </div>
-                    <div class="program-detail">
-                        <h3>Ambition</h3>
-                        <p>We demand the best for children and are committed to making lasting change. We are creative in our approach and bold in our actions.</p>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://i.stci.uk/dam/children-in-a-save-the-children-child-friendly-space-in-ukraine-ch1678338.jpg/6b3f3q8h5q0h5u6n7v7e0i4c3g8w7d4o.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=3Rjz6NpW" alt="Ambition">
+                        </div>
+                        <div class="member-info">
+                            <h3>AMBITION</h3>
+                            <p>We demand change for children and are committed to making the world a better place for them. We set high goals and are relentless in pursuing them.</p>
+                        </div>
                     </div>
-                    <div class="program-detail">
-                        <h3>Collaboration</h3>
-                        <p>We respect and value each other, thrive on our diversity, and work with partners to leverage our global strength in making a difference for children.</p>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://i.stci.uk/dam/children-in-a-save-the-children-child-friendly-space-in-ukraine-ch1678338.jpg/6b3f3q8h5q0h5u6n7v7e0i4c3g8w7d4o.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=3Rjz6NpW" alt="Collaboration">
+                        </div>
+                        <div class="member-info">
+                            <h3>COLLABORATION</h3>
+                            <p>We work together with children, communities, partners, and supporters to achieve the greatest impact for children at scale.</p>
+                        </div>
                     </div>
-                    <div class="program-detail">
-                        <h3>Integrity</h3>
-                        <p>We aspire to live to the highest standards of personal honesty and behavior; we never compromise our reputation and always act in the best interests of children.</p>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://i.stci.uk/dam/children-in-a-save-the-children-child-friendly-space-in-ukraine-ch1678338.jpg/6b3f3q8h5q0h5u6n7v7e0i4c3g8w7d4o.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=3Rjz6NpW" alt="Creativity">
+                        </div>
+                        <div class="member-info">
+                            <h3>CREATIVITY</h3>
+                            <p>We are open to new ideas, embrace change, and take disciplined risks to develop sustainable solutions for and with children.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- About Us Page -->
+    <!-- About Page -->
     <div id="about" class="page">
         <section class="about-hero">
             <div class="container">
@@ -1202,13 +1292,14 @@
             <div class="container">
                 <div class="mission-content">
                     <div class="mission-text">
-                        <h2>Our Story</h2>
-                        <p>HopeForChildren was founded in 1919 by Eglantyne Jebb in response to the devastating impact of World War I on children. Her revolutionary idea was that children have rights, regardless of who they are or where they're from. This vision led to the creation of the first Declaration of the Rights of the Child, which later inspired the UN Convention on the Rights of the Child.</p>
-                        <p>Today, we work in over 80 countries, including the United States, reaching millions of children each year through our programs in health, nutrition, education, protection and child rights. We're committed to ensuring that every child has the opportunity to grow up healthy, educated and safe.</p>
-                        <p>Our work is guided by our Global Strategy, which focuses on three breakthroughs for children by 2030: Survive, Learn, and Be Protected. We believe that together with our partners, donors, and supporters, we can achieve these ambitious goals.</p>
+                        <h2>Our History</h2>
+                        <p>Founded in 1919 by Eglantyne Jebb in response to the plight of children affected by World War I, we've grown to become the world's leading independent organization for children.</p>
+                        <p>Our founder drafted the first Declaration of the Rights of the Child, which was adopted by the League of Nations in 1924 and later formed the basis of the UN Convention on the Rights of the Child.</p>
+                        <p>Today, we work in over 100 countries, reaching millions of children each year through our programs in health, nutrition, education, protection and child rights.</p>
+                        <a href="#" class="btn btn-primary" data-page="mission">Our Mission</a>
                     </div>
                     <div class="mission-image">
-                        <img src="https://i.stci.uk/dam/children-play-in-afghanistan-anonymised-version-ch1582011.jpg/p7bk516ivfw1cajym542fb5230e36uf0.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=gmSBp5ph" alt="Children playing in Afghanistan">
+                        <img src="https://i.stci.uk/dam/a-save-the-children-community-based-class-in-kabul-afghanistan-ch1668939.jpg/c63c753d1653o1c1401ly8csp66cb261.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=Qv6jQ9pC" alt="Historical photo of Save the Children">
                     </div>
                 </div>
             </div>
@@ -1216,36 +1307,42 @@
 
         <section class="team-section">
             <div class="container">
-                <h2 class="section-title">Our Leadership</h2>
+                <h2 class="section-title">Our Global Network</h2>
                 <div class="team-grid">
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="https://i.stci.uk/dam/portrait-of-a-save-the-children-staff-member-ch1668940.jpg/3k1f7v1v0f0s8w8k7p8q6k5w7c8c8c8c.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=QK4t9w-R" alt="Jahan Zeb, CEO">
+                            <img src="https://i.stci.uk/dam/children-in-a-save-the-children-child-friendly-space-in-ukraine-ch1678338.jpg/6b3f3q8h5q0h5u6n7v7e0i4c3g8w7d4o.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=3Rjz6NpW" alt="Global Reach">
                         </div>
                         <div class="member-info">
-                            <h3>Jahan Zeb</h3>
-                            <div class="member-role">Chief Executive Officer</div>
-                            <p class="member-bio">Jahan has over 20 years of experience in humanitarian work and child rights advocacy. Under his leadership, HopeForChildren has expanded its reach to over 80 countries.</p>
+                            <h3>GLOBAL REACH</h3>
+                            <p>We work in over 100 countries, with 25 member organizations and additional program offices delivering our mission worldwide.</p>
                         </div>
                     </div>
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="https://i.stci.uk/dam/portrait-of-a-save-the-children-staff-member-ch1668941.jpg/3k1f7v1v0f0s8w8k7p8q6k5w7c8c8c8c.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=QK4t9w-R" alt="Dr. Amina Hassan">
+                            <img src="https://i.stci.uk/dam/children-in-a-save-the-children-child-friendly-space-in-ukraine-ch1678338.jpg/6b3f3q8h5q0h5u6n7v7e0i4c3g8w7d4o.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=3Rjz6NpW" alt="Local Expertise">
                         </div>
                         <div class="member-info">
-                            <h3>Dr. Amina Hassan</h3>
-                            <div class="member-role">Global Program Director</div>
-                            <p class="member-bio">Dr. Hassan leads our global programs with expertise in public health and child development. She has been instrumental in designing our health and nutrition initiatives.</p>
+                            <h3>LOCAL EXPERTISE</h3>
+                            <p>95% of our staff are nationals of the countries where they work, ensuring deep understanding of local contexts and needs.</p>
                         </div>
                     </div>
                     <div class="team-member">
                         <div class="member-image">
-                            <img src="https://i.stci.uk/dam/portrait-of-a-save-the-children-staff-member-ch1668942.jpg/3k1f7v1v0f0s8w8k7p8q6k5w7c8c8c8c.jpg?g=0.5x0.33&w=950&h=600&format=webp&itok=QK4t9w-R" alt="Michael Chen">
+                            <img src="https://i.stci.uk/dam/children-in-a-save-the-children-child-friendly-space-in-ukraine-ch1678338.jpg/6b3f3q8h5q0h5u6n7v7e0i4c3g8w7d4o.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=3Rjz6NpW" alt="Financial Accountability">
                         </div>
                         <div class="member-info">
-                            <h3>Michael Chen</h3>
-                            <div class="member-role">Director of Emergency Response</div>
-                            <p class="member-bio">Michael coordinates our emergency responses worldwide, bringing extensive experience in disaster management and humanitarian coordination.</p>
+                            <h3>FINANCIAL ACCOUNTABILITY</h3>
+                            <p>We're proud that 85% of all spending goes directly to program activities, with strong financial controls and transparency.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://i.stci.uk/dam/children-in-a-save-the-children-child-friendly-space-in-ukraine-ch1678338.jpg/6b3f3q8h5q0h5u6n7v7e0i4c3g8w7d4o.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=3Rjz6NpW" alt="Emergency Response">
+                        </div>
+                        <div class="member-info">
+                            <h3>EMERGENCY RESPONSE</h3>
+                            <p>We're consistently among the first to respond and the last to leave in humanitarian crises, reaching 15.6 million people in 2022 alone.</p>
                         </div>
                     </div>
                 </div>
@@ -1258,7 +1355,7 @@
         <section class="page-hero">
             <div class="container">
                 <h1>Health & Nutrition</h1>
-                <p>Ensuring children survive and thrive through access to quality healthcare and proper nutrition.</p>
+                <p>Ensuring children survive and thrive with access to quality healthcare and proper nutrition.</p>
             </div>
         </section>
 
@@ -1267,12 +1364,13 @@
                 <div class="content-grid">
                     <div class="content-text">
                         <h2>Saving Children's Lives</h2>
-                        <p>Every day, nearly 15,000 children under the age of five die from preventable causes. We're working to change that by providing life-saving healthcare and nutrition to children in the world's poorest communities.</p>
-                        <p>Our health programs focus on maternal and child health, immunization, treatment of common childhood illnesses, and strengthening health systems. We train health workers, equip clinics, and work with communities to promote healthy practices.</p>
-                        <p>Our nutrition programs address both immediate and underlying causes of malnutrition. We provide therapeutic feeding for severely malnourished children, support breastfeeding, promote diverse diets, and address food security issues.</p>
+                        <p>Every day, 15,000 children under 5 die from preventable causes. We're working to change that by providing life-saving healthcare and nutrition to children in the world's poorest communities.</p>
+                        <p>Our health programs focus on maternal and child health, immunization, treatment of common childhood illnesses, and prevention of malnutrition.</p>
+                        <p>We train health workers, strengthen health systems, and ensure communities have access to the healthcare they need.</p>
+                        <a href="#" class="btn btn-primary" data-page="donate">Support Our Work</a>
                     </div>
                     <div class="content-image">
-                        <img src="https://i.stci.uk/dam/kamila-5-months-being-treated-for-malnutrition-held-by-her-mother-ch1873549.jpg/u46mj05qy6x0r042j7q7xg86518os148.jpg?g=0.5x0.33&w=1018&h=720&format=webp&itok=EPp1dCVt" alt="Child receiving medical treatment">
+                        <img src="https://i.stci.uk/dam/kamila-5-months-being-treated-for-malnutrition-held-by-her-mother-ch1873549.jpg/u46mj05qy6x0r042j7q7xg86518os148.jpg?g=0.5x0.33&w=1018&h=720&format=webp&itok=EPp1dCVt" alt="Child receiving medical care">
                     </div>
                 </div>
             </div>
@@ -1280,23 +1378,23 @@
 
         <section class="content-section light">
             <div class="container">
-                <h2 class="section-title">Our Approach</h2>
+                <h2 class="section-title">Our Health Programs</h2>
                 <div class="program-details">
                     <div class="program-detail">
-                        <h3>Community Health</h3>
-                        <p>We train and support community health workers to provide basic health services, health education, and referrals in hard-to-reach areas where formal health facilities are scarce.</p>
+                        <h3>MATERNAL & CHILD HEALTH</h3>
+                        <p>We work to ensure mothers and babies survive childbirth and the first critical years of life through prenatal care, skilled birth attendance, postnatal care, and immunization services.</p>
                     </div>
                     <div class="program-detail">
-                        <h3>Emergency Health Response</h3>
-                        <p>In crises, we deploy emergency health units to provide immediate medical care, prevent disease outbreaks, and support local health systems to continue functioning.</p>
+                        <h3>NUTRITION</h3>
+                        <p>We treat and prevent malnutrition through community-based management of acute malnutrition, promoting breastfeeding, and providing supplementary feeding for vulnerable children.</p>
                     </div>
                     <div class="program-detail">
-                        <h3>Nutrition Programs</h3>
-                        <p>We screen children for malnutrition, provide therapeutic feeding, support infant and young child feeding practices, and address the underlying causes of malnutrition.</p>
+                        <h3>COMMUNITY HEALTH</h3>
+                        <p>We train and support community health workers to provide basic health services, health education, and referrals in remote and underserved areas.</p>
                     </div>
                     <div class="program-detail">
-                        <h3>Health System Strengthening</h3>
-                        <p>We work with governments to strengthen health systems, improve supply chains for essential medicines, and build the capacity of health workers.</p>
+                        <h3>EMERGENCY HEALTH RESPONSE</h3>
+                        <p>In crises, we deploy mobile health clinics, provide emergency medical supplies, and support health facilities to ensure continuity of care.</p>
                     </div>
                 </div>
             </div>
@@ -1316,13 +1414,14 @@
             <div class="container">
                 <div class="content-grid">
                     <div class="content-text">
-                        <h2>Protecting Children's Rights</h2>
-                        <p>Every child has the right to grow up safe from harm. Yet millions of children worldwide experience violence, exploitation, and abuse. We work to prevent and respond to these violations of children's rights.</p>
-                        <p>Our child protection programs focus on preventing and responding to violence, exploitation, and abuse. We work with children, families, communities, and governments to create protective environments where children can thrive.</p>
-                        <p>In emergencies, we establish child-friendly spaces where children can be safe, play, and receive psychosocial support. We also work to reunite separated children with their families and provide alternative care when needed.</p>
+                        <h2>Protecting Children from Harm</h2>
+                        <p>Every child has the right to be safe from violence, exploitation, and abuse. Yet millions of children worldwide face these threats every day.</p>
+                        <p>Our child protection programs work to prevent and respond to violence against children, including physical and humiliating punishment, sexual abuse, child marriage, child labor, and trafficking.</p>
+                        <p>We establish child-friendly spaces in emergencies, support child protection systems, and work with communities to change harmful practices.</p>
+                        <a href="#" class="btn btn-primary" data-page="donate">Support Child Protection</a>
                     </div>
                     <div class="content-image">
-                        <img src="https://i.stci.uk/dam/CH1751628_A_group_of_women_and_children_waiting_in_line_to_buy_water_in_Baidoa,_Somalia-(1)-(1)-(1).-ch1751628.jpg/pe3pk287wvw04oaq81708p3u3yhfx2t8.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=eh8NNqs9" alt="Children in a protective environment">
+                        <img src="https://i.stci.uk/dam/CH1751628_A_group_of_women_and_children_waiting_in_line_to_buy_water_in_Baidoa,_Somalia-(1)-(1)-(1).-ch1751628.jpg/pe3pk287wvw04oaq81708p3u3yhfx2t8.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=eh8NNqs9" alt="Child protection activities">
                     </div>
                 </div>
             </div>
@@ -1333,57 +1432,57 @@
                 <h2 class="section-title">Our Protection Work</h2>
                 <div class="program-details">
                     <div class="program-detail">
-                        <h3>Child-Friendly Spaces</h3>
-                        <p>In emergencies, we establish safe spaces where children can play, learn, and receive psychosocial support. These spaces protect children from harm and help them cope with trauma.</p>
+                        <h3>CHILD-FRIENDLY SPACES</h3>
+                        <p>In emergencies, we establish safe spaces where children can play, learn, and receive psychosocial support, protected from harm.</p>
                     </div>
                     <div class="program-detail">
-                        <h3>Family Tracing and Reunification</h3>
-                        <p>When children are separated from their families in emergencies, we work to trace and reunite them with their relatives as quickly as possible.</p>
+                        <h3>FAMILY TRACING AND REUNIFICATION</h3>
+                        <p>When children are separated from their families in crises, we work to find them and reunite them with their caregivers.</p>
                     </div>
                     <div class="program-detail">
-                        <h3>Community-Based Protection</h3>
-                        <p>We work with communities to establish child protection committees and systems that identify, prevent, and respond to child protection risks.</p>
+                        <h3>ENDING VIOLENCE AGAINST CHILDREN</h3>
+                        <p>We work to eliminate physical punishment, bullying, and other forms of violence against children in all settings.</p>
                     </div>
                     <div class="program-detail">
-                        <h3>Advocacy for Child Rights</h3>
-                        <p>We advocate for laws, policies, and practices that protect children from violence, exploitation, and abuse, and promote their rights and well-being.</p>
+                        <h3>CHILD PARTICIPATION</h3>
+                        <p>We ensure children have a voice in decisions that affect them and can advocate for their own rights and protection.</p>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Emergency Page -->
+    <!-- Emergency Response Page -->
     <div id="emergency" class="page">
         <section class="emergency-hero">
             <div class="container">
                 <h1>Emergency Response</h1>
-                <p>Rapidly responding to disasters and conflicts to save children's lives and protect their futures.</p>
+                <p>Rapidly responding to save children's lives in crises around the world.</p>
             </div>
         </section>
 
         <section class="crisis-section">
             <div class="container">
-                <h2 class="section-title">Current Crises</h2>
+                <h2 class="section-title">Current Emergencies</h2>
                 <div class="crisis-grid">
                     <div class="crisis-card">
                         <div class="crisis-image">
                             <img src="https://i.stci.uk/dam/abdi-17-months-is-measured-for-signs-of-malnutrition-with-a-muac-band-which-shows-yellow-ch1873527.jpg/07iyj1q434j1y44f053l6qgaldy73v63.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=47-iCnvn" alt="Gaza crisis">
                         </div>
                         <div class="crisis-content">
-                            <h3>Gaza: Famine Crisis</h3>
-                            <p>Famine has been officially confirmed in Gaza. Children are starving to death in plain sight. At least 132,000 children under five are at risk of death from acute malnutrition.</p>
+                            <h3>FAMINE IN GAZA</h3>
+                            <p>Children in Gaza are facing catastrophic levels of hunger and malnutrition. The healthcare system has collapsed, and families are struggling to find food, water, and shelter.</p>
                             <div class="crisis-stats">
                                 <div class="crisis-stat">
-                                    <div class="number">132K</div>
-                                    <div class="label">Children at Risk</div>
+                                    <div class="number">1.1M</div>
+                                    <div class="label">Facing Catastrophic Hunger</div>
                                 </div>
                                 <div class="crisis-stat">
-                                    <div class="number">85%</div>
-                                    <div class="label">Displaced</div>
+                                    <div class="number">132K</div>
+                                    <div class="label">Children Under 5 At Risk</div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary" data-page="donate">Help Now</a>
+                            <a href="#" class="btn btn-primary" data-page="donate">Help Children in Gaza</a>
                         </div>
                     </div>
                     <div class="crisis-card">
@@ -1391,64 +1490,60 @@
                             <img src="https://i.stci.uk/dam/damage-due-to-an-earthquake-that-hit-kunar-province-afghanistan-on-1-september-2025-ch11434696.jpg/v722j38a63q514a858iv42isik4kc580.jpg?g=0.29x0.7&w=2562&format=webp&itok=hk4czRcF" alt="Afghanistan earthquake">
                         </div>
                         <div class="crisis-content">
-                            <h3>Afghanistan Earthquake</h3>
-                            <p>A devastating 6.0 magnitude earthquake has struck Afghanistan. Hundreds have been killed and thousands of children have been impacted. Tremors are still occurring intermittently.</p>
+                            <h3>AFGHANISTAN EARTHQUAKE</h3>
+                            <p>A devastating 6.0 magnitude earthquake has struck Afghanistan, killing hundreds and leaving thousands of children in urgent need of assistance.</p>
                             <div class="crisis-stats">
                                 <div class="crisis-stat">
-                                    <div class="number">280+</div>
-                                    <div class="label">Deaths</div>
+                                    <div class="number">1,500+</div>
+                                    <div class="label">Lives Lost</div>
                                 </div>
                                 <div class="crisis-stat">
-                                    <div class="number">1.2K</div>
-                                    <div class="label">Injured</div>
+                                    <div class="number">10K+</div>
+                                    <div class="label">Children Affected</div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary" data-page="donate">Help Now</a>
+                            <a href="#" class="btn btn-primary" data-page="donate">Support Earthquake Response</a>
                         </div>
                     </div>
                     <div class="crisis-card">
                         <div class="crisis-image">
-                            <img src="https://i.stci.uk/dam/adno-and-her-children-at-home--karkar-region-ch11386088.jpg/476e3uryr5shij47qi30757n5h83rj08.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=feVilnR3" alt="Climate crisis">
+                            <img src="https://i.stci.uk/dam/children-in-a-save-the-children-child-friendly-space-in-ukraine-ch1678338.jpg/6b3f3q8h5q0h5u6n7v7e0i4c3g8w7d4o.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=3Rjz6NpW" alt="Ukraine crisis">
                         </div>
                         <div class="crisis-content">
-                            <h3>Climate Crisis Impact</h3>
-                            <p>Extreme weather events are displacing millions of children and threatening their access to food, water, and education. We're responding to climate-related emergencies worldwide.</p>
+                            <h3>UKRAINE CONFLICT</h3>
+                            <p>Three years into the conflict, children in Ukraine continue to face daily threats to their safety, education, and wellbeing.</p>
                             <div class="crisis-stats">
                                 <div class="crisis-stat">
-                                    <div class="number">43M</div>
-                                    <div class="label">Displaced in 2023</div>
+                                    <div class="number">5.3M</div>
+                                    <div class="label">Children Displaced</div>
                                 </div>
                                 <div class="crisis-stat">
-                                    <div class="number">774M</div>
-                                    <div class="label">Facing Extreme Heat</div>
+                                    <div class="number">1,300+</div>
+                                    <div class="label">Schools Damaged</div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-primary" data-page="donate">Help Now</a>
+                            <a href="#" class="btn btn-primary" data-page="donate">Help Children in Ukraine</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section light">
-            <div class="container">
-                <h2 class="section-title">Our Emergency Response Approach</h2>
-                <div class="program-details">
-                    <div class="program-detail">
-                        <h3>Rapid Assessment</h3>
-                        <p>Within hours of a disaster, our teams are on the ground assessing needs and determining the most effective response to save lives and protect children.</p>
-                    </div>
-                    <div class="program-detail">
-                        <h3>Life-Saving Assistance</h3>
-                        <p>We provide emergency shelter, food, water, sanitation, and healthcare to meet the immediate needs of children and families affected by crises.</p>
-                    </div>
-                    <div class="program-detail">
-                        <h3>Child Protection in Emergencies</h3>
-                        <p>We establish child-friendly spaces, provide psychosocial support, work to reunite separated children with their families, and protect children from harm.</p>
-                    </div>
-                    <div class="program-detail">
-                        <h3>Education in Emergencies</h3>
-                        <p>We set up temporary learning spaces and provide education materials to ensure children can continue learning even during crises.</p>
+                    <div class="crisis-card">
+                        <div class="crisis-image">
+                            <img src="https://i.stci.uk/dam/CH1751628_A_group_of_women_and_children_waiting_in_line_to_buy_water_in_Baidoa,_Somalia-(1)-(1)-(1).-ch1751628.jpg/pe3pk287wvw04oaq81708p3u3yhfx2t8.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=eh8NNqs9" alt="Horn of Africa drought">
+                        </div>
+                        <div class="crisis-content">
+                            <h3>HORN OF AFRICA DROUGHT</h3>
+                            <p>Consecutive failed rainy seasons have left millions facing severe hunger across Ethiopia, Kenya, and Somalia.</p>
+                            <div class="crisis-stats">
+                                <div class="crisis-stat">
+                                    <div class="number">36M</div>
+                                    <div class="label">People Affected</div>
+                                </div>
+                                <div class="crisis-stat">
+                                    <div class="number">5M</div>
+                                    <div class="label">Children Malnourished</div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary" data-page="donate">Support Drought Response</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1460,7 +1555,7 @@
         <section class="donate-hero">
             <div class="container">
                 <h1>Donate Now</h1>
-                <p>Your donation can save children's lives and protect their futures.</p>
+                <p>Your donation can save children's lives and give them the future they deserve.</p>
             </div>
         </section>
 
@@ -1468,64 +1563,260 @@
             <div class="container">
                 <div class="donation-container">
                     <div class="donation-options">
-                        <h2 style="margin-bottom: 2rem; color: var(--dark);">Make a Donation</h2>
-                        
+                        <h2>Make a Donation</h2>
                         <div class="donation-type">
-                            <div class="donation-option active" data-type="one-time">One-Time Gift</div>
-                            <div class="donation-option" data-type="monthly">Monthly Gift</div>
+                            <div class="donation-option active">One-time</div>
+                            <div class="donation-option">Monthly</div>
                         </div>
-                        
                         <div class="amount-options">
-                            <div class="amount-option" data-amount="25">$25</div>
-                            <div class="amount-option" data-amount="50">$50</div>
-                            <div class="amount-option" data-amount="100">$100</div>
-                            <div class="amount-option" data-amount="250">$250</div>
+                            <div class="amount-option">$35</div>
+                            <div class="amount-option">$50</div>
+                            <div class="amount-option">$100</div>
+                            <div class="amount-option">$250</div>
                         </div>
-                        
                         <div class="custom-amount">
                             <label for="custom-amount">Other Amount ($)</label>
                             <input type="number" id="custom-amount" placeholder="Enter amount">
                         </div>
-                        
-                        <div class="donation-impact-image" style="margin-bottom: 2rem; border-radius: 10px; overflow: hidden;">
-                            <img src="https://i.stci.uk/dam/eileen-49-holds-her-one-day-old-granddaughter-lana-at-a-save-the-children-maternity-unit-gaza-ch11035363.jpg/020lt5v25cm8ib666v6i1431gp0p3pbs.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=1WU7R2r7" alt="Eileen holds her one-day-old granddaughter Lana at a maternity unit in Gaza" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        
-                        <button class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.2rem;">Donate Now</button>
-                        
-                        <p style="margin-top: 1rem; text-align: center; color: #666; font-size: 0.9rem;">Your donation is secure and tax-deductible.</p>
+                        <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">Donate Now</a>
                     </div>
-                    
                     <div class="donation-impact">
                         <h3 class="impact-title">Your Impact</h3>
                         <ul class="impact-list">
                             <li>
                                 <span class="impact-icon">✓</span>
-                                <span>$50 can provide a month's supply of nutritious food for a malnourished child</span>
+                                <span>$35 can provide a month of nutritious food for a malnourished child</span>
                             </li>
                             <li>
                                 <span class="impact-icon">✓</span>
-                                <span>$100 can provide emergency shelter for a family displaced by disaster</span>
+                                <span>$50 can provide emergency shelter for a family fleeing conflict</span>
                             </li>
                             <li>
                                 <span class="impact-icon">✓</span>
-                                <span>$250 can provide life-saving medical care for 10 children</span>
+                                <span>$100 can provide life-saving medicine for 50 children</span>
                             </li>
                             <li>
                                 <span class="impact-icon">✓</span>
-                                <span>$500 can establish a child-friendly space in an emergency</span>
-                            </li>
-                            <li>
-                                <span class="impact-icon">✓</span>
-                                <span>$1,000 can provide education supplies for 50 children</span>
+                                <span>$250 can provide education kits for 20 children</span>
                             </li>
                         </ul>
-                        
-                        <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 10px;">
-                            <h4 style="margin-bottom: 1rem; color: var(--dark);">Why Give to HopeForChildren?</h4>
-                            <p style="color: #666; line-height: 1.6;">85% of every dollar we spend goes directly to programs that help children. We have received the highest ratings from charity watchdog organizations for our efficiency and transparency.</p>
+                        <div style="margin-top: 2rem;">
+                            <h3>Other Ways to Give</h3>
+                            <p>You can also support our work through workplace giving, legacy gifts, or corporate partnerships.</p>
+                            <a href="#" class="btn btn-secondary" style="margin-top: 1rem;">Learn More</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Legal Pages -->
+    <div id="legal" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Legal</h1>
+                <p>How we use your information</p>
+            </div>
+        </section>
+
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-content">
+                    <h2>Terms of Use</h2>
+                    <p>Access to and use of this website (www.hopeforkids.org) any related websites within the domain of hopeforkids.org (the "Website") is provided by Hope For Kids International ("Hope For Kids") and is subject to the following terms:</p>
+                    
+                    <h3>TERMS OF USE</h3>
+                    <p>By using the Website you agree to be legally bound by these terms of use, which shall take effect from your first use of the Website. If these Terms and Conditions are not accepted in full, the use of the Website must be terminated immediately.</p>
+                    
+                    <p>For the purposes of this agreement, "content" means material including, without limitation, text, video, graphics and audio, published on the Website, whether copyright of Hope For Kids or a third party.</p>
+                    
+                    <p>Hope For Kids does not warrant that the functions contained in this Website will be uninterrupted or error free, that defects will be corrected, or that this site or the server that makes it available are free of viruses or bugs or represents the full functionality, accuracy and reliability of the content.</p>
+                    
+                    <p>Hope For Kids does not warrant that functions contained in the Website will be uninterrupted or error free, that defects will be corrected, or that the Website or the server that makes it available on the internet are virus-free.</p>
+                    
+                    <p>No data transmission over the internet can be guaranteed to be 100% secure; therefore any information sent by e-mail or submitted through the Website is at your own risk.</p>
+                    
+                    <p>The Website is provided "as is" without any representations or any form of warranty (whether made expressly or implied by law), including the implied warranties of satisfactory quality, fitness for a particular purpose, non-infringement, compatibility, security and accuracy.</p>
+                    
+                    <p>Hope For Kids reserves the right to change these terms at any time by posting changes online. Your continued use of the Website after any changes are posted means you agree to be legally bound by these terms as updated and/or amended.</p>
+                    
+                    <p>The terms and use of the Website shall be governed by English law and shall be subject to the exclusive jurisdiction of the courts of England.</p>
+                    
+                    <p>By donating to Hope For Kids via text you agree to have the donation sum and the cost of a standard text message added to your 'pay monthly' mobile phone bill or deducted from your 'pay as you go' mobile phone credit.</p>
+                    
+                    <p>If you donate online or via text by purchasing items from either our Virtual Clinic or our Wishlist, your money may not be used to buy the selected item but is a representation for what your money may be used. Donations through gifts in the Wishlist will contribute to projects related to the gift theme. Donations through items in the Virtual Clinic will be used to help fund the cost of building and maintaining seven new clinics with staff and equipment in Bangladesh.</p>
+                    
+                    <p>Should donations for any particular appeal exceed our target for that appeal then we will use your donation to help other vulnerable children around the world wherever the need is greatest.</p>
+                    
+                    <p>Refunds are at the discretion of Hope For Kids.</p>
+                    
+                    <p>We do not actively fundraise from the under 18s and will aim to ensure that no under 18's are contacted with marketing material.</p>
+                    
+                    <p>All material on the Website is the copyright of Hope For Kids or third parties. You may view the content of this site on screen. You may not copy, reproduce, republish, download, post, broadcast, transmit or otherwise use the Website content in any way except for non-commercial, personal or educational use. You also agree not to adapt, alter or create a derivative work from any of the Website's content except for non-commercial, personal or educational use. Any other use of the Website content requires the prior written permission of Hope For Kids.</p>
+                    
+                    <p>The names, images and logos identifying Hope For Kids or any other third parties referred to on the Website and their products and services may be subject to copyright, design rights or trade mark rights. These trademarks may not be reproduced without the consent of the relevant owners. Nothing contained in these terms shall be construed as conferring any licence or right to use any trademark, design right or copyright of Hope For Kids or any other third party.</p>
+                    
+                    <p>You agree to use the Website for lawful purposes and in a way that does not infringe the rights of, nor restrict or inhibit anyone else's use and enjoyment of, the Website.</p>
+                    
+                    <p>If there is any conflict between these terms and any rules and/or specific terms of use appearing on specific sections of the Website, then the latter shall prevail.</p>
+                    
+                    <p>Hope For Kids will not be liable for any damages, including indirect or consequential damages, or any damages arising from the use or loss of use of the Website, or the loss of data or profits, whether in contract, negligence or other tortuous action, arising from or in connection with the use of the Website.</p>
+                    
+                    <p>The Website may contain links to other websites. These links are provided for your convenience and Hope For Kids has no control over such websites, nor is it responsible for their content. Hope For Kids's Privacy Policy does not extend to any websites that can be accessed from www.hopeforkids.org or any related websites within the domain of www.hopeforkids.org. The inclusion of these links on the Website does not imply endorsement of any material on those websites, or any association with their operators, unless otherwise stated. Hope For Kids cannot guarantee the security of these sites, the operation of the links or that they will be virus-free.</p>
+                    
+                    <p>Your use of any third party websites is at your own risk and subject to their respective terms & conditions and privacy policies.</p>
+                    
+                    <p>Where you are invited to submit any contribution to Hope For Kids (including any text, photographs, graphics, video or audio) you agree, by submitting your contribution, to grant Hope For Kids a perpetual, royalty-free, non-exclusive, sub-licensable right and license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, perform, play, make available to the public, and exercise all copyright and publicity rights with respect to your contribution worldwide and/or to incorporate your contribution in other works in any media now known or later developed for the full term of any rights that may exist in your contribution, and in accordance with privacy restrictions set out in Hope For Kids's privacy policy. If you do not want to grant to Hope For Kids the rights set out above, please do not submit your contribution.</p>
+                    
+                    <p>Contributions must be your own, they must be civil and tasteful. They must not contain any unlawful or objectionable content and they must not infringe the law. You agree that Hope For Kids shall not be responsible for your or anyone else's contributions to its Website or any form of social media. Should you identify contributions which are unlawful, distasteful or otherwise objectionable then please contact Hope For Kids.</p>
+                    
+                    <p>When you providing your details or contributions to us you are stating that you are over 18 years of age or are a minor with parental consent. You agree that any information you provide to us about yourself upon registration or at any time will be true and accurate.</p>
+                    
+                    <p>You agree to review this agreement periodically to ensure you are aware of any changes.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="privacy-policy" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Privacy Policy</h1>
+                <p>How we protect and use your personal information</p>
+            </div>
+        </section>
+
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-content">
+                    <div class="legal-image">
+                        <img src="https://i.stci.uk/dam/computers-in-the-digital-learning-center-created-thanks-to-the-support-of-save-the-children-in-the-school-of-stary-bilous-village-chernihiv-region-ch1766142.jpg/134d3v2p0hu2ley51301577cgwuwv8pp.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=qKTec966" alt="Privacy Policy">
+                    </div>
+                    
+                    <h2>Who we are</h2>
+                    <p>The processing of your personal data is carried out by Hope For Kids International (HFKI) as the 'Data Controller'. This means that Hope For Kids International makes decisions about the use and management of your personal data and is accountable for those decisions.</p>
+                    
+                    <p>Hope For Kids International is a company limited by guarantee, registered in England and Wales with company number 3732267 and a charity registered in England and Wales with charity number 1076822.</p>
+                    
+                    <h3>How to contact us</h3>
+                    <p>If you have any questions regarding this Privacy Statement or the handling of your data, please contact the Data Protection Officer by email at dpo@hopeforkids.org or by post to:</p>
+                    
+                    <p>The Data Protection Officer<br>
+                    Hope For Kids International<br>
+                    St Vincent House,<br>
+                    30 Orange Street<br>
+                    London<br>
+                    WC2H 7HH</p>
+                    
+                    <h3>Purposes of processing your personal data</h3>
+                    <p>We need to collect, use, and store your personal data to administer engagement, to manage our organisation, and to meet our legal obligations. The type of data being processed will differ from the nature of the process and purpose. Sections below specifies the types of data collected, purpose and how we process your data.</p>
+                    
+                    <h3>How we collect your data</h3>
+                    <p>We obtain your data from:</p>
+                    <ul>
+                        <li>Provided directly by you</li>
+                        <li>Third-party sources such as payment processors or financial institutions, donor management platforms, fundraising partners or agencies as telemarketing providers.</li>
+                        <li>Social media platforms (if you have chosen to connect or interact with us through these channels)</li>
+                        <li>Publicly available sources (such as public databases, social media profiles, or news articles)</li>
+                        <li>Google services (such as Google Analytics, Google Ads, or other Google platforms utilized by our organization for data collection)</li>
+                        <li>Data generated through your interactions with our platforms or services</li>
+                        <li>Data collected through cookies or similar technologies when you interact with our website or digital assets</li>
+                        <li>Data obtained through surveys, feedback forms, or other voluntary submissions</li>
+                    </ul>
+                    
+                    <p>For the complete Privacy Policy with all sections, please contact us at dpo@hopeforkids.org.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="cookie-policy" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Cookie Policy</h1>
+                <p>How we use cookies and similar technologies</p>
+            </div>
+        </section>
+
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-content">
+                    <div class="legal-image">
+                        <img src="https://i.stci.uk/dam/damian-is-playing-on-a-computer-in-dlc-ch11009090.jpg/x3473qfq8ac31r5c4381xxqdrk0c1260.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=xloBcQK6" alt="Cookie Policy">
+                    </div>
+                    
+                    <h2>WHAT ARE COOKIES?</h2>
+                    <p>Cookies are small files, typically of letters and numbers, downloaded on to a device when you access certain websites or emails, including Hope For Kids's website. Cookies allow a website to recognise your device.</p>
+                    
+                    <p>For more information see: www.allaboutcookies.org/</p>
+                    
+                    <h3>Do we use cookies?</h3>
+                    <p>Yes. We use strictly necessary, performance, functionality and targeting cookies on our website. We have assessed our cookies based on the ICC Cookie Guide (www.international-chamber.co.uk/blog/2012/04/02/launch-of-icc-uk-cookie-guide/).</p>
+                    
+                    <p>We use Google Analytics to understand how people use our website so we can make it more effective. Google Analytics collects anonymous information about what people do on our website, where they've come from, and whether they've completed any tasks on the site, for example, applying for a job. Google Analytics tracks this information using cookies and JavaScript code.</p>
+                    
+                    <h3>Website statistics analytics</h3>
+                    <p>This website uses Google Analytics, a web analytics service provided by Google, Inc. ("Google"). Google Analytics uses "cookies", which are text files placed on your computer, to help the website analyse how users use the site. The information generated by the cookie about your use of the website (including your IP address) will be transmitted to and stored by Google on servers in the United States. Google will use this information for the purpose of evaluating your use of the website, compiling reports on website activity for website operators and providing other services relating to website activity and internet usage. Google may also transfer this information to third parties where required to do so by law, or where such third parties process the information on Google's behalf. Google will not associate your IP address with any other data held by Google. You may refuse the use of cookies by selecting the appropriate settings on your browser, however please note that if you do this you may not be able to use the full functionality of this website. By using this website, you consent to the processing of data about you by Google in the manner and for the purposes set out above. The Google's Analytics overview.</p>
+                    
+                    <h3>Third party cookies</h3>
+                    <p>You may notice some cookies that are not related to the Hope For Kids's website whilst visiting www.hopeforkids.org. Some of our pages contain embedded content such as YouTube video, Twitter feed, Facebook likes or Google plus share, and you may receive cookies delivered from these websites. Hope For Kids does not govern the publication of third party cookies. To understand more about their cookies and privacy statements, please visit the relevant sites.</p>
+                    
+                    <p>Some of our cookies will remind you about our work and how you can help after you have left the website. These are the targeting/advertising cookies we use. It is a useful tool for us to keep public awareness of our campaigns and how they can be supported.</p>
+                    
+                    <p>If you do not want cookies to be stored on your PC it is possible to disable this function without affecting your navigation around the site.</p>
+                    
+                    <h3>HOW DO YOU DISABLE COOKIES?</h3>
+                    <p>If you are using Microsoft Internet Explorer and you wish to block Hope For Kids's website cookies, you can perform the following:</p>
+                    
+                    <p>On your browser tools menu, select 'Internet Options'<br>
+                    Click on the 'Privacy' tab and then on the 'Sites' button<br>
+                    Type into the 'Address of website' field:<br>
+                    www.hopeforkids.org<br>
+                    Click on the 'Block' button<br>
+                    Click on the OK button</p>
+                    
+                    <p>Other browsers have similar cookie management abilities in their preferences settings, please refer to your browser's 'Help' facility.</p>
+                    
+                    <p>Find more detailed information on disabling cookies from aboutcookies.org.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="modern-slavery" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Modern Slavery Statement</h1>
+                <p>Our commitment to preventing modern slavery and human trafficking</p>
+            </div>
+        </section>
+
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-content">
+                    <div class="legal-image">
+                        <img src="https://i.stci.uk/dam/warehouse-in-gaziantep-distributes-aid-ch1941725.jpg/mi3613j3mq144438o44hsfs2re28levl.jpg?g=0.5x0.33&w=1440&h=600&format=webp&itok=ePU6TuCU" alt="Modern Slavery Statement">
+                    </div>
+                    
+                    <p>The 2015 Modern Slavery Act requires large UK organisations to publish annual statements to report on the steps they are taking to ensure that modern slavery and human trafficking are not taking place in their operations and in the supply chains that provide their goods and services in the respective financial year.</p>
+                    
+                    <p>Each year, the Hope For Kids International Board Statement sets out the progress which has been made since previous year's Statement. In the course of preparing the statement, Hope For Kids International have considered practical actions which we have taken and are taking to achieve the commitments detailed by the Board last year, and to move closer to preventing, detecting and responding to issues of modern slavery in our organisation and supply chains. In addition to acting on the specific commitments, additional work has been undertaken to combat this issue across the organisation.</p>
+                    
+                    <h3>Modern Slavery Statements</h3>
+                    <ul>
+                        <li>Modern Slavery Statement 2024</li>
+                        <li>Modern Slavery Statement 2023</li>
+                        <li>Modern Slavery Statement 2022</li>
+                        <li>Modern Slavery Statement 2021</li>
+                        <li>Modern Slavery Statement 2020</li>
+                        <li>Modern Slavery Statement 2019</li>
+                        <li>Modern Slavery Statement 2018</li>
+                        <li>Modern Slavery Statement 2017</li>
+                        <li>Modern Slavery Statement 2016</li>
+                    </ul>
+                    
+                    <p>For copies of our Modern Slavery Statements, please contact us at info@hopeforkids.org.</p>
                 </div>
             </div>
         </section>
@@ -1537,145 +1828,130 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>HopeForChildren</h3>
-                    <p style="color: #ccc; line-height: 1.6;">We believe every child deserves a future. Since 1919, we've been giving children around the world a healthy start, the opportunity to learn and protection from harm.</p>
+                    <p>We're on the frontlines protecting children in the world's most dangerous places, providing healthcare, education, and protection to those who need it most.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Work</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" data-page="health">Health & Nutrition</a></li>
-                        <li><a href="#" data-page="protection">Child Protection</a></li>
-                        <li><a href="#" data-page="emergency">Emergency Response</a></li>
-                        <li><a href="#">Education</a></li>
-                        <li><a href="#">Child Rights</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Get Involved</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" data-page="donate">Donate</a></li>
-                        <li><a href="#">Fundraise</a></li>
-                        <li><a href="#">Volunteer</a></li>
-                        <li><a href="#">Partner With Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><a href="mailto:info@hopeforchildren.org">info@hopeforchildren.org</a></li>
-                        <li><a href="tel:+1-800-123-4567">1-800-123-4567</a></li>
-                        <li>123 Hope Street, City, Country</li>
-                        <li><a href="#">Media Inquiries</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> St Vincent House, 30 Orange Street, London WC2H 7HH</li>
+                        <li><i class="fas fa-phone"></i> +44 (0)20 7012 6400</li>
+                        <li><i class="fas fa-envelope"></i> info@hopeforkids.org</li>
                     </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="about">About Us</a></li>
+                        <li><a href="#" data-page="mission">Our Mission</a></li>
+                        <li><a href="#" data-page="emergency">Emergency Response</a></li>
+                        <li><a href="#" data-page="donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on our work.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 HopeForChildren. All rights reserved. | <a href="#" style="color: #ccc;">Privacy Policy</a> | <a href="#" style="color: #ccc;">Terms of Service</a></p>
+                <p>&copy; 2025 Hope For Kids International. All rights reserved. Registered charity in England and Wales (1076822)</p>
+                <div class="footer-legal-links">
+                    <a href="#" data-page="legal">Legal</a>
+                    <a href="#" data-page="privacy-policy">Privacy Policy</a>
+                    <a href="#" data-page="cookie-policy">Cookie Policy</a>
+                    <a href="#" data-page="modern-slavery">Modern Slavery Statement</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
         // Page Navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pages = document.querySelectorAll('.page');
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            // Function to show a specific page
-            function showPage(pageId) {
+        const navLinks = document.querySelectorAll('.nav-link, .alert-link, .btn');
+        const pages = document.querySelectorAll('.page');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetPage = link.getAttribute('data-page');
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+                
                 // Hide all pages
                 pages.forEach(page => {
                     page.classList.remove('active');
                 });
                 
-                // Show the selected page
-                document.getElementById(pageId).classList.add('active');
+                // Show target page
+                document.getElementById(targetPage).classList.add('active');
                 
                 // Update active nav link
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('data-page') === pageId) {
-                        link.classList.add('active');
+                document.querySelectorAll('.nav-link').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                
+                if (link.classList.contains('nav-link')) {
+                    link.classList.add('active');
+                } else {
+                    // Find the corresponding nav link and activate it
+                    const correspondingNavLink = document.querySelector(`.nav-link[data-page="${targetPage}"]`);
+                    if (correspondingNavLink) {
+                        correspondingNavLink.classList.add('active');
                     }
-                });
+                }
                 
-                // Close mobile menu if open
-                navMenu.classList.remove('active');
-            }
-            
-            // Add click event to nav links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const pageId = this.getAttribute('data-page');
-                    showPage(pageId);
-                    
-                    // Scroll to top when navigating
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
+                // Scroll to top
+                window.scrollTo(0, 0);
             });
-            
-            // Mobile menu toggle
-            mobileMenuBtn.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
+        });
+
+        // Donation Options
+        const donationOptions = document.querySelectorAll('.donation-option');
+        const amountOptions = document.querySelectorAll('.amount-option');
+
+        donationOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                donationOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
             });
-            
-            // Donation options functionality
-            const donationOptions = document.querySelectorAll('.donation-option');
-            const amountOptions = document.querySelectorAll('.amount-option');
-            
-            donationOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    donationOptions.forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            amountOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    amountOptions.forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                    document.getElementById('custom-amount').value = '';
-                });
-            });
-            
-            // Custom amount input
-            document.getElementById('custom-amount').addEventListener('input', function() {
+        });
+
+        amountOptions.forEach(option => {
+            option.addEventListener('click', () => {
                 amountOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
             });
-            
-            // Newsletter form submission
-            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
-                const messageEl = document.getElementById('newsletter-message');
-                
-                // Simulate submission
-                messageEl.innerHTML = '<p style="color: white;">Thank you for subscribing! You will receive our next newsletter.</p>';
-                this.reset();
-                
-                // Clear message after 5 seconds
-                setTimeout(() => {
-                    messageEl.innerHTML = '';
-                }, 5000);
-            });
-            
-            // Animate stats counter
-            function animateStats() {
-                const stats = document.querySelectorAll('.number[data-count]');
-                
-                stats.forEach(stat => {
+        });
+
+        // Animate stats counter
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stat = entry.target;
                     const target = parseInt(stat.getAttribute('data-count'));
                     const duration = 2000; // 2 seconds
                     const step = target / (duration / 16); // 60fps
@@ -1687,33 +1963,16 @@
                             current = target;
                             clearInterval(timer);
                         }
-                        
-                        if (stat.getAttribute('data-count') === '87' || 
-                            stat.getAttribute('data-count') === '100') {
-                            stat.textContent = Math.floor(current);
-                        } else if (stat.getAttribute('data-count') === '85') {
-                            stat.textContent = Math.floor(current) + '%';
-                        } else {
-                            stat.textContent = Math.floor(current).toLocaleString();
-                        }
+                        stat.textContent = Math.floor(current).toLocaleString();
                     }, 16);
-                });
-            }
-            
-            // Trigger stats animation when they come into view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateStats();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            const statsSection = document.querySelector('.impact-section');
-            if (statsSection) {
-                observer.observe(statsSection);
-            }
+                    
+                    observer.unobserve(stat);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat .number').forEach(stat => {
+            observer.observe(stat);
         });
     </script>
 </body>
